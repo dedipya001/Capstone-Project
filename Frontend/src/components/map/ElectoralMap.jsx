@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import Map, { NavigationControl } from 'react-map-gl';
+import { useToast } from '../../context/ToastContext';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '../../styles/mapStyles.css';
 
@@ -30,9 +31,10 @@ import indiaGeoData from '../../assets/india_geo.json';
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 
-
-
 const ElectoralMap = () => {
+  // Get toast context for notifications
+  const { addToast } = useToast();
+  
   // State for map viewport
   const [viewport, setViewport] = useState(DEFAULT_VIEWPORT);
   
@@ -78,10 +80,19 @@ const ElectoralMap = () => {
       .sort((a, b) => a.number - b.number);
   }, [pcData]);
 
+  // Show initial map loaded notification
+  useEffect(() => {
+    // Show this notification only once per session
+    addToast(
+      'Electoral map initialized successfully', 
+      'info', 
+      5000,
+      { once: true, id: 'map-initialized' }
+    );
+  }, [addToast]);
+
   // Handle search
   const handleSearch = async (placeName) => {
-    event.preventDefault();
-    // const placeName2 = event.target.city.value;
     setError(null);
   
     try {
@@ -100,11 +111,32 @@ const ElectoralMap = () => {
           pcName: result.pcInfo.pcName,
           pcNo: result.pcInfo.pcNo
         });
+
+        // Show constituency found notification
+        addToast(
+          `Found constituency: ${result.pcInfo.pcName} in ${result.pcInfo.stateName}`,
+          'success',
+          5000
+        );
       } else {
         // If no exact PC match is found
         if (result.stateName) {
           setSelectedState(result.stateName);
           setSelectedPC(null);
+          
+          // Show state found notification
+          addToast(
+            `Found location in ${result.stateName}`,
+            'success',
+            5000
+          );
+        } else {
+          // General location found
+          addToast(
+            `Location found: ${result.location.name}`,
+            'info',
+            5000
+          );
         }
         
         setPopupInfo({
@@ -133,6 +165,13 @@ const ElectoralMap = () => {
     } catch (error) {
       console.error('Error:', error);
       setError(error.message || 'Error fetching location data');
+      
+      // Show error notification
+      addToast(
+        error.message || 'Error searching for location',
+        'error',
+        8000
+      );
     } finally {
       setLoading(false);
     }
@@ -151,12 +190,28 @@ const ElectoralMap = () => {
     
     if (clickedFeature.layer.id === 'state-fills') {
       // Clicked on a state
-      setSelectedState(clickedFeature.properties.STATE_NAME);
+      const stateName = clickedFeature.properties.STATE_NAME;
+      setSelectedState(stateName);
       setSelectedPC(null);
       setPopupInfo(null);
+      
+      // Show state selection notification
+      addToast(
+        `Selected state: ${stateName}`,
+        'info',
+        3000
+      );
     } else if (clickedFeature.layer.id === 'pc-fills') {
       // Clicked on a PC
-      setSelectedPC(clickedFeature.properties.PC_NAME);
+      const pcName = clickedFeature.properties.PC_NAME;
+      setSelectedPC(pcName);
+      
+      // Show PC selection notification
+      addToast(
+        `Selected constituency: ${pcName}`,
+        'info',
+        3000
+      );
       
       // Create popup info
       try {
@@ -174,10 +229,25 @@ const ElectoralMap = () => {
         }
       } catch (e) {
         console.warn('Error getting coordinates for popup', e);
+        
+        // Show error for popup placement
+        addToast(
+          'Could not center view on selected constituency',
+          'warning',
+          3000
+        );
       }
     } else if (clickedFeature.layer.id === 'search-point') {
       // Clicked on search point - show detailed info
       const { lng, lat } = event.lngLat;
+      const placeName = clickedFeature.properties.name;
+      
+      // Notification for clicking on a search point
+      addToast(
+        `Viewing details for ${placeName}`,
+        'info',
+        3000
+      );
       
       setPopupInfo({
         longitude: lng,
@@ -204,6 +274,13 @@ const ElectoralMap = () => {
     setSelectedPC(null);
     setPopupInfo(null);
     
+    // Notification for state selection from sidebar
+    addToast(
+      `Selected state: ${state}`,
+      'info',
+      3000
+    );
+    
     // Find center point of the state for better view
     const stateFeature = stateData.features.find(f => f.properties.STATE_NAME === state);
     if (stateFeature) {
@@ -217,6 +294,13 @@ const ElectoralMap = () => {
           bearing: 0,
           transitionDuration: 1500,
         });
+      } else {
+        // Notification if centering fails
+        addToast(
+          `Could not center view on ${state}`,
+          'warning',
+          3000
+        );
       }
     }
   };
@@ -224,6 +308,13 @@ const ElectoralMap = () => {
   // Handle PC selection
   const handleSelectPC = (pc) => {
     setSelectedPC(pc.name);
+    
+    // Notification for constituency selection from list
+    addToast(
+      `Selected constituency: ${pc.name}`,
+      'info',
+      3000
+    );
     
     // Find PC and center view on it
     const pcFeature = pcData.features.find(f => 
@@ -249,6 +340,13 @@ const ElectoralMap = () => {
           bearing: 0,
           transitionDuration: 1500,
         });
+      } else {
+        // Notification if centering fails
+        addToast(
+          `Could not center view on ${pc.name}`,
+          'warning',
+          3000
+        );
       }
     }
   };
@@ -259,6 +357,13 @@ const ElectoralMap = () => {
     setSelectedPC(null);
     setPopupInfo(null);
     setCityData(null);
+    
+    // Notification for view reset
+    addToast(
+      'View reset to all of India',
+      'info',
+      3000
+    );
     
     setViewport({
       ...DEFAULT_VIEWPORT,

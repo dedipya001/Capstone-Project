@@ -1,3 +1,4 @@
+// src/components/dashboard/Dashboard.jsx
 import React, { useEffect } from 'react';
 import { useToast } from '../../context/ToastContext';
 import StatsSummary from './StatsSummary';
@@ -9,16 +10,21 @@ const Dashboard = () => {
   const { addToast } = useToast();
   
   useEffect(() => {
-    // Welcome toast when dashboard loads
-    addToast('Welcome to the Electoral Data Dashboard', 'info');
+    // Welcome toast when dashboard loads - only once per session
+    addToast(
+      'Welcome to the Electoral Data Dashboard', 
+      'info',
+      5000,
+      { once: true, id: 'dashboard-welcome' }
+    );
     
-    // Simulate system notifications
+    // Simulate system notifications - this will show each time
     const timer = setTimeout(() => {
       addToast('New boundary data available for Madhya Pradesh', 'success');
     }, 3000);
     
     return () => clearTimeout(timer);
-  }, [addToast]);
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
     <div className="dashboard-container">

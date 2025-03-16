@@ -259,3 +259,60 @@
   .back-button:hover {
     background: rgba(255, 0, 255, 0.1);
   }
+
+/* Map Page specific styles */
+.map-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #000;
+}
+
+.map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.8);
+  color: #00ff00;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid #00ff00;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.back-to-dashboard {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #00ff00;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.back-to-dashboard:hover {
+  background: rgba(0, 255, 0, 0.1);
+  transform: translateX(-2px);
+}
+
+.map-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #00ff00;
+}
+
+.map-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.map-fullscreen-container {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 56px); /* Adjust based on header height */
+  overflow: hidden;
+}

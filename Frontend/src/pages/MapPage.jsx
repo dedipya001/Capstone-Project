@@ -1,57 +1,58 @@
 import React, { useEffect, useRef } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from '../components/common/Header';
-import Sidebar from '../components/common/Sidebar';
 import ElectoralMap from '../components/map/ElectoralMap';
 import AuthGuard from '../components/common/AuthGuard';
+import { FaArrowLeft } from 'react-icons/fa';
 import '../styles/mapStyles.css';
 
 const MapPage = () => {
-  // Use a ref to track if the initial toasts have been shown
+  // Use a ref to track if toasts have been shown
   const toastsShown = useRef(false);
   
   useEffect(() => {
-    // Only show toasts on the first render
+    // Only show toasts on initial render
     if (!toastsShown.current) {
-      // Show the tip toast
       toast.info('Tip: Click on a state to see its parliamentary constituencies', {
         position: "top-right",
-        autoClose: 8000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true
+        autoClose: 8000
       });
       
-      // Queue the success toast to show after a delay
-      const successTimer = setTimeout(() => {
+      const timer = setTimeout(() => {
         toast.success('Map data successfully loaded', {
           position: "top-right",
           autoClose: 5000
         });
       }, 3000);
       
-      // Mark toasts as shown
       toastsShown.current = true;
-      
-      // Clean up the timer on component unmount
-      return () => clearTimeout(successTimer);
+      return () => clearTimeout(timer);
     }
-  }, []); // Empty dependency array ensures this runs only once
+  }, []);
 
   return (
     <AuthGuard>
-      <div className="dashboard-layout">
-        <Header />
-        <div className="dashboard-main">
-          <Sidebar />
-          <div className="dashboard-content map-container">
-            <ElectoralMap />
+      <div className="map-layout">
+        {/* Custom header with back button */}
+        <div className="map-header">
+          <Link to="/dashboard" className="back-to-dashboard">
+            <FaArrowLeft /> Back to Dashboard
+          </Link>
+          <div className="map-title">
+            Electoral Map
+          </div>
+          <div className="map-header-right">
+            {/* Optional: Add controls like fullscreen, help, etc. */}
           </div>
         </div>
+        
+        {/* Full-width/height map container */}
+        <div className="map-fullscreen-container">
+          <ElectoralMap />
+        </div>
       </div>
-      <ToastContainer />
     </AuthGuard>
   );
 };
