@@ -30,6 +30,8 @@ import indiaGeoData from '../../assets/india_geo.json';
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 
+
+
 const ElectoralMap = () => {
   // State for map viewport
   const [viewport, setViewport] = useState(DEFAULT_VIEWPORT);
@@ -78,6 +80,8 @@ const ElectoralMap = () => {
 
   // Handle search
   const handleSearch = async (placeName) => {
+    event.preventDefault();
+    // const placeName2 = event.target.city.value;
     setError(null);
   
     try {
