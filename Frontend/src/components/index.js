@@ -1,0 +1,1 @@
+export { default as ElectoralMap } from './map/ElectoralMap';

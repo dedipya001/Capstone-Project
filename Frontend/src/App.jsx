@@ -1,13 +1,8 @@
-import './App.css'
-import Map from './components/Map.jsx'
+import React from 'react';
+import { ElectoralMap } from './components';
 
 function App() {
-
-return (
-  <div>
-    <Map />
-  </div>
-)
+  return <ElectoralMap />;
 }
 
-export default App
+export default App;
