@@ -1,11 +1,14 @@
+// src/components/common/Sidebar.jsx
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useAuth } from '../../context/AuthContext';
+import { useSettings } from '../../context/SettingsContext';
 import '../../styles/components.css';
 
 const Sidebar = () => {
   const { user } = useAuth();
+  const { userProfile } = useSettings();
   
   // Dashboard navigation items
   const navItems = [
@@ -45,10 +48,10 @@ const Sidebar = () => {
     >
       <div className="sidebar-header">
         <div className="user-profile">
-          <img src={user?.avatar} alt={user?.name} className="user-avatar" />
+          <img src={userProfile.avatar} alt={userProfile.name} className="user-avatar" />
           <div className="user-details">
-            <h3>{user?.name}</h3>
-            <span className="user-role">{user?.role}</span>
+            <h3>{userProfile.name}</h3>
+            <span className="user-role">{userProfile.role}</span>
           </div>
         </div>
       </div>

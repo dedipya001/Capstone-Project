@@ -1,5 +1,7 @@
+// src/components/map/ElectoralMap.jsx
 import React, { useState, useEffect, useMemo } from 'react';
 import Map, { NavigationControl } from 'react-map-gl';
+import { useSettings } from '../../context/SettingsContext';
 import { useToast } from '../../context/ToastContext';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '../../styles/mapStyles.css';
@@ -32,8 +34,9 @@ import indiaGeoData from '../../assets/india_geo.json';
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 
 const ElectoralMap = () => {
-  // Get toast context for notifications
   const { addToast } = useToast();
+  // Get settings from context
+  const { mapSettings } = useSettings();
   
   // State for map viewport
   const [viewport, setViewport] = useState(DEFAULT_VIEWPORT);
@@ -46,8 +49,12 @@ const ElectoralMap = () => {
   const [selectedPC, setSelectedPC] = useState(null);
   const [hoveredFeature, setHoveredFeature] = useState(null);
   const [popupInfo, setPopupInfo] = useState(null);
-  const [showStateSidebar, setShowStateSidebar] = useState(true);
-  const [showLegend, setShowLegend] = useState(true);
+  
+  // Use map settings from context instead of local state
+  const showStateSidebar = mapSettings.showStateSidebar;
+  const showLegend = mapSettings.showLegend;
+  const showPopups = mapSettings.showPopups;
+  const mapStyle = mapSettings.mapStyle;
 
   // Process GeoJSON data 
   const processedGeoData = useMemo(() => {
@@ -104,14 +111,16 @@ const ElectoralMap = () => {
         setSelectedState(result.pcInfo.stateName);
         setSelectedPC(result.pcInfo.pcName);
         
-        setPopupInfo({
-          longitude: result.location.lng,
-          latitude: result.location.lat,
-          stateName: result.pcInfo.stateName,
-          pcName: result.pcInfo.pcName,
-          pcNo: result.pcInfo.pcNo
-        });
-
+        if (showPopups) {
+          setPopupInfo({
+            longitude: result.location.lng,
+            latitude: result.location.lat,
+            stateName: result.pcInfo.stateName,
+            pcName: result.pcInfo.pcName,
+            pcNo: result.pcInfo.pcNo
+          });
+        }
+        
         // Show constituency found notification
         addToast(
           `Found constituency: ${result.pcInfo.pcName} in ${result.pcInfo.stateName}`,
@@ -139,13 +148,15 @@ const ElectoralMap = () => {
           );
         }
         
-        setPopupInfo({
-          longitude: result.location.lng,
-          latitude: result.location.lat,
-          locationName: result.location.name,
-          stateName: result.location.state || 'Unknown',
-          address: result.location.displayName
-        });
+        if (showPopups) {
+          setPopupInfo({
+            longitude: result.location.lng,
+            latitude: result.location.lat,
+            locationName: result.location.name,
+            stateName: result.location.state || 'Unknown',
+            address: result.location.displayName
+          });
+        }
       }
 
       setCityData({
@@ -179,6 +190,8 @@ const ElectoralMap = () => {
 
   // Handle clicking on the map
   const handleMapClick = (event) => {
+    if (!mapSettings.enableInteractions) return;
+    
     const { features } = event;
     
     if (!features || features.length === 0) {
@@ -213,31 +226,33 @@ const ElectoralMap = () => {
         3000
       );
       
-      // Create popup info
-      try {
-        // Get centroid for popup placement
-        const centroid = getFeatureCentroid(clickedFeature);
-        
-        if (centroid) {
-          setPopupInfo({
-            longitude: centroid[0],
-            latitude: centroid[1],
-            stateName: clickedFeature.properties.STATE_NAME,
-            pcName: clickedFeature.properties.PC_NAME,
-            pcNo: clickedFeature.properties.PC_No
-          });
+      // Create popup info if popups are enabled
+      if (showPopups) {
+        try {
+          // Get centroid for popup placement
+          const centroid = getFeatureCentroid(clickedFeature);
+          
+          if (centroid) {
+            setPopupInfo({
+              longitude: centroid[0],
+              latitude: centroid[1],
+              stateName: clickedFeature.properties.STATE_NAME,
+              pcName: clickedFeature.properties.PC_NAME,
+              pcNo: clickedFeature.properties.PC_No
+            });
+          }
+        } catch (e) {
+          console.warn('Error getting coordinates for popup', e);
+          
+          // Show error for popup placement
+          addToast(
+            'Could not center view on selected constituency',
+            'warning',
+            3000
+          );
         }
-      } catch (e) {
-        console.warn('Error getting coordinates for popup', e);
-        
-        // Show error for popup placement
-        addToast(
-          'Could not center view on selected constituency',
-          'warning',
-          3000
-        );
       }
-    } else if (clickedFeature.layer.id === 'search-point') {
+    } else if (clickedFeature.layer.id === 'search-point' && showPopups) {
       // Clicked on search point - show detailed info
       const { lng, lat } = event.lngLat;
       const placeName = clickedFeature.properties.name;
@@ -260,6 +275,8 @@ const ElectoralMap = () => {
 
   // Handle hovering over map features
   const handleHover = (event) => {
+    if (!mapSettings.enableInteractions) return;
+    
     const { features } = event;
     if (features && features.length > 0) {
       setHoveredFeature(features[0]);
@@ -324,13 +341,15 @@ const ElectoralMap = () => {
     if (pcFeature) {
       const centroid = getFeatureCentroid(pcFeature);
       if (centroid) {
-        setPopupInfo({
-          longitude: centroid[0],
-          latitude: centroid[1],
-          stateName: selectedState,
-          pcName: pc.name,
-          pcNo: pc.number
-        });
+        if (showPopups) {
+          setPopupInfo({
+            longitude: centroid[0],
+            latitude: centroid[1],
+            stateName: selectedState,
+            pcName: pc.name,
+            pcNo: pc.number
+          });
+        }
         
         setViewport({
           longitude: centroid[0],
@@ -413,7 +432,7 @@ const ElectoralMap = () => {
         onMouseMove={handleHover}
         interactiveLayerIds={['state-fills', 'pc-fills', 'search-point']}
         style={{ width: '100%', height: '100%' }}
-        mapStyle="mapbox://styles/mapbox/dark-v11"
+        mapStyle={mapStyle}
         mapboxAccessToken={MAPBOX_TOKEN}
       >
         <NavigationControl position="top-right" />
@@ -439,12 +458,15 @@ const ElectoralMap = () => {
         )}
 
         {/* Popups */}
-        <FeaturePopup 
-          popupInfo={popupInfo} 
-          onClose={() => setPopupInfo(null)} 
-        />
+        {showPopups && popupInfo && (
+          <FeaturePopup 
+            popupInfo={popupInfo} 
+            onClose={() => setPopupInfo(null)} 
+          />
+        )}
 
-        {hoveredFeature && !popupInfo && hoveredFeature.layer.id !== 'search-point' && (
+        {showPopups && hoveredFeature && !popupInfo && 
+         hoveredFeature.layer.id !== 'search-point' && (
           <HoverPopup 
             feature={hoveredFeature} 
             centroidFn={getFeatureCentroid} 

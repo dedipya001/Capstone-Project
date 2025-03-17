@@ -1,13 +1,16 @@
+// src/components/common/Header.jsx
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../context/ToastContext';
+import { useSettings } from '../../context/SettingsContext';
 import '../../styles/components.css';
 
 const Header = () => {
-  const { user, logout } = useAuth();
+  const { logout } = useAuth();
   const { addToast } = useToast();
+  const { userProfile } = useSettings();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -41,17 +44,16 @@ const Header = () => {
         <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
           <Link to="/" className={`nav-link ${isActive('/')}`}>Home</Link>
           
-          {user ? (
+          {userProfile ? (
             <>
               <Link to="/dashboard" className={`nav-link ${isActive('/dashboard')}`}>Dashboard</Link>
               <Link to="/map" className={`nav-link ${isActive('/map')}`}>Electoral Map</Link>
               <div className="user-menu">
                 <div className="user-info">
-                  <img src={user.avatar} alt={user.name} className="user-avatar" />
-                  <span className="user-name">{user.name}</span>
+                  <img src={userProfile.avatar} alt={userProfile.name} className="user-avatar" />
+                  <span className="user-name">{userProfile.name}</span>
                 </div>
                 <div className="dropdown-menu">
-                  <Link to="/profile" className="dropdown-item">Profile</Link>
                   <Link to="/settings" className="dropdown-item">Settings</Link>
                   <button onClick={handleLogout} className="dropdown-item logout-button">Logout</button>
                 </div>
