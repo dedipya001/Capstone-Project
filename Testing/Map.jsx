@@ -1000,7 +1000,7 @@ const MyMap = () => {
       </Map>
 
       <AttributionText>
-        Data from Election Commission of India | Geocoding: © OpenStreetMap contributors
+        Data from Municipal Corporation of India | Geocoding: © OpenStreetMap contributors
       </AttributionText>
     </StyledContainer>
   );

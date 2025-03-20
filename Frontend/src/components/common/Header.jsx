@@ -27,8 +27,8 @@ const Header = () => {
     <header className="app-header">
       <div className="header-container">
         <Link to="/" className="header-logo">
-          <img src="/logo.svg" alt="Electoral Map" />
-          <span>Electoral Data</span>
+          <img src="/logo.svg" alt="" />
+          <span>Garbage Data</span>
         </Link>
 
         <button 
@@ -47,7 +47,7 @@ const Header = () => {
           {userProfile ? (
             <>
               <Link to="/dashboard" className={`nav-link ${isActive('/dashboard')}`}>Dashboard</Link>
-              <Link to="/map" className={`nav-link ${isActive('/map')}`}>Electoral Map</Link>
+              <Link to="/map" className={`nav-link ${isActive('/map')}`}>Map</Link>
               <div className="user-menu">
                 <div className="user-info">
                   <img src={userProfile.avatar} alt={userProfile.name} className="user-avatar" />

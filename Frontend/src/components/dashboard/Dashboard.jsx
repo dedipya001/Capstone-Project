@@ -12,7 +12,7 @@ const Dashboard = () => {
   useEffect(() => {
     // Welcome toast when dashboard loads - only once per session
     addToast(
-      'Welcome to the Electoral Data Dashboard', 
+      'Welcome to the Garbage Data Dashboard', 
       'info',
       5000,
       { once: true, id: 'dashboard-welcome' }

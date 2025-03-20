@@ -35,7 +35,7 @@ const ContactSection = () => {
       <div className="section-container">
         <div className="section-header">
           <h2>Get in Touch</h2>
-          <p>Have questions about the electoral data dashboard? Contact us!</p>
+          <p>Have questions about the Garbage Monitoring  data dashboard? Contact us!</p>
         </div>
         
         <div className="contact-container">
@@ -49,7 +49,7 @@ const ContactSection = () => {
               <div className="contact-icon">✉️</div>
               <div>
                 <h4>Email</h4>
-                <p>support@electoraldata.gov.in</p>
+                <p>support@garbagedata.gov.in</p>
               </div>
             </div>
             <div className="contact-method">
@@ -63,7 +63,7 @@ const ContactSection = () => {
               <div className="contact-icon">🏢</div>
               <div>
                 <h4>Address</h4>
-                <p>Election Commission of India, Nirvachan Sadan, Ashoka Road, New Delhi - 110001</p>
+                {/* <p>Election Commission of India, Nirvachan Sadan, Ashoka Road, New Delhi - 110001</p> */}
               </div>
             </div>
           </motion.div>

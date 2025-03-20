@@ -8,8 +8,8 @@ const QuickActions = () => {
   const actions = [
     {
       icon: '🗺️',
-      title: 'Electoral Map',
-      description: 'View and analyze the electoral map data',
+      title: 'Geological Map',
+      description: 'View and analyze the Geological map data',
       path: '/map',
       primary: true
     },

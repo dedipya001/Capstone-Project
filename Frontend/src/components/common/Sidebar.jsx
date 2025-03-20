@@ -73,7 +73,7 @@ const Sidebar = () => {
       </nav>
 
       <div className="sidebar-footer">
-        <p>Electoral Data Dashboard</p>
+        <p>Garbage Data Dashboard</p>
         <p className="version">v1.0.0</p>
       </div>
     </motion.aside>

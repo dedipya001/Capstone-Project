@@ -14,10 +14,10 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="hero-title">
-            India's Electoral Data <span className="highlight">Dashboard</span>
+            India's Garbage Monitoring Data <span className="highlight">Dashboard</span>
           </h1>
           <p className="hero-description">
-            Comprehensive visualization and analysis of electoral boundaries, demographics, and voting patterns across India's parliamentary constituencies.
+            Comprehensive visualization and analysis of garbage boundaries, demographics, and cleaning patterns across India's parliamentary constituencies.
           </p>
           <div className="hero-buttons">
             <Button to="/dashboard" variant="primary" size="large">
@@ -35,7 +35,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <img src="/images/india-map-preview.png" alt="India Electoral Map" />
+          <img src="/images/india-map-preview.png" alt="" />
         </motion.div>
       </div>
       

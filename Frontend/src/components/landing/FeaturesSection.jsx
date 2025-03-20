@@ -42,7 +42,7 @@ const FeaturesSection = () => {
       <div className="section-container">
         <div className="section-header">
           <h2>Key Features</h2>
-          <p>Explore the powerful tools and capabilities of our electoral data dashboard</p>
+          <p>Explore the powerful tools and capabilities of our garbage monitoring data dashboard</p>
         </div>
         
         <div className="features-grid">
