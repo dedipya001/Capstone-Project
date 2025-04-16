@@ -69,6 +69,8 @@ const VIJAYAWADA_BOUNDARY = {
   }
 };
 
+
+
 // Garbage collection points with status
 const GARBAGE_COLLECTION_POINTS = [
   {
@@ -210,183 +212,21 @@ const VIJAYAWADA_LANDMARKS = [
   },
   {
     id: 6,
-    name: "Municipal Corporation Office",
-    category: CATEGORIES.GOVERNMENT,
-    description: "Administrative headquarters of the Vijayawada Municipal Corporation that manages civic infrastructure and public services in the city.",
-    latitude: 16.5165, 
-    longitude: 80.6226,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Vijayawada_Municipal_Corporation.jpg/320px-Vijayawada_Municipal_Corporation.jpg"
+    name: "Mangalagiri Market Area",
+    category: CATEGORIES.MARKET,
+    description: "A bustling market area known for textiles, fresh produce, spices, and local handicrafts. Popular among locals and tourists alike.",
+    latitude: 16.4300,
+    longitude: 80.5580,
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/MG_Road%2C_Vijayawada.jpg/320px-MG_Road%2C_Vijayawada.jpg"
   },
   {
     id: 7,
-    name: "Andhra University Vijayawada Campus",
+    name: "SRM University, AP",
     category: CATEGORIES.EDUCATIONAL,
-    description: "Major educational institution offering undergraduate and postgraduate programs in various disciplines.",
-    latitude: 16.5350,
-    longitude: 80.6480,
-    image: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Andhra_University_logo.png/220px-Andhra_University_logo.png"
-  },
-  {
-    id: 8,
-    name: "Krishna University",
-    category: CATEGORIES.EDUCATIONAL,
-    description: "State university established in 2008, offering higher education in arts, sciences and professional courses.",
-    latitude: 16.5261,
-    longitude: 80.6710,
-    image: "https://www.krishnauniversity.ac.in/images/homepage_background.jpg"
-  },
-  {
-    id: 9,
-    name: "SRR & CVR Government Degree College",
-    category: CATEGORIES.EDUCATIONAL,
-    description: "One of the oldest educational institutions in the region, offering undergraduate programs in various fields.",
-    latitude: 16.5141,
-    longitude: 80.6375,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/SRR_%26_CVR_Government_College.jpg/320px-SRR_%26_CVR_Government_College.jpg"
-  },
-  {
-    id: 10,
-    name: "Governorpet Market",
-    category: CATEGORIES.MARKET,
-    description: "Vibrant local market selling fresh produce, textiles, and household items. Popular shopping destination for locals.",
-    latitude: 16.5094,
-    longitude: 80.6295,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/MG_Road%2C_Vijayawada.jpg/320px-MG_Road%2C_Vijayawada.jpg"
-  },
-  {
-    id: 11,
-    name: "Rythu Bazar (Farmers' Market)",
-    category: CATEGORIES.MARKET,
-    description: "Direct farmer-to-consumer market where local farmers sell fresh fruits and vegetables at regulated prices.",
-    latitude: 16.5052,
-    longitude: 80.6447,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rythu_Bazar.jpg/320px-Rythu_Bazar.jpg"
-  },
-  {
-    id: 12,
-    name: "Besant Road Shopping Area",
-    category: CATEGORIES.MARKET,
-    description: "Popular commercial street with fashion boutiques, jewelry stores, and various retail shops.",
-    latitude: 16.5120,
-    longitude: 80.6260,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/MG_Road%2C_Vijayawada.jpg/320px-MG_Road%2C_Vijayawada.jpg"
-  },
-  {
-    id: 13,
-    name: "PVP Mall",
-    category: CATEGORIES.COMMERCIAL,
-    description: "Modern shopping mall with retail stores, food court and cinema. One of the largest shopping destinations in the city.",
-    latitude: 16.5036,
-    longitude: 80.6476,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/PVP_Square%2C_Vijayawada.jpg/320px-PVP_Square%2C_Vijayawada.jpg"
-  },
-  {
-    id: 14,
-    name: "Government General Hospital",
-    category: CATEGORIES.HOSPITAL,
-    description: "Major public hospital providing healthcare services to Vijayawada and surrounding regions.",
-    latitude: 16.5110,
-    longitude: 80.6290,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Government_General_Hospital%2C_Vijayawada.jpg/320px-Government_General_Hospital%2C_Vijayawada.jpg"
-  },
-  {
-    id: 15,
-    name: "Victoria Jubilee Museum",
-    category: CATEGORIES.HISTORIC,
-    description: "Archaeological museum housed in a historic building from 1887. Features ancient sculptures, paintings, and artifacts from the region.",
-    latitude: 16.5090,
-    longitude: 80.6343,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Victoria_Jubilee_Museum.jpg/320px-Victoria_Jubilee_Museum.jpg"
-  },
-  {
-    id: 16,
-    name: "Krishnaveni Ghat",
-    category: CATEGORIES.RECREATION,
-    description: "Scenic riverfront area along the Krishna River, popular for evening walks and cultural events.",
-    latitude: 16.5089,
-    longitude: 80.6120,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Krishna_River_Vijayawada_2.jpg/320px-Krishna_River_Vijayawada_2.jpg"
-  },
-  {
-    id: 17,
-    name: "Vijayawada Bus Station",
-    category: CATEGORIES.TRANSPORT,
-    description: "Modern bus terminal handling intercity and interstate bus services, connecting Vijayawada to various destinations.",
-    latitude: 16.5158,
-    longitude: 80.6242,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Vijayawada_Bus_Station.jpg/320px-Vijayawada_Bus_Station.jpg"
-  },
-  {
-    id: 18,
-    name: "Mahatma Gandhi Road",
-    category: CATEGORIES.COMMERCIAL,
-    description: "Main commercial street with shops, restaurants and businesses. One of the busiest areas in Vijayawada.",
-    latitude: 16.5103,
-    longitude: 80.6278,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/MG_Road%2C_Vijayawada.jpg/320px-MG_Road%2C_Vijayawada.jpg"
-  },
-  {
-    id: 19,
-    name: "Punnami Ghat",
-    category: CATEGORIES.RECREATION,
-    description: "Popular riverfront promenade along Krishna River. Features musical fountains, boating facilities, and stunning sunset views.",
-    latitude: 16.5114,
-    longitude: 80.6147,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Krishna_River_Front%2C_Vijayawada.jpg/320px-Krishna_River_Front%2C_Vijayawada.jpg"
-  },
-  {
-    id: 20,
-    name: "Indira Gandhi Municipal Stadium",
-    category: CATEGORIES.RECREATION,
-    description: "Multi-purpose stadium hosting cricket and football events with a capacity of over 25,000 spectators.",
-    latitude: 16.5134,
-    longitude: 80.6336,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Indira_Gandhi_Municipal_Stadium.jpg/320px-Indira_Gandhi_Municipal_Stadium.jpg"
-  },
-  {
-    id: 21,
-    name: "Andhra Loyola College",
-    category: CATEGORIES.EDUCATIONAL,
-    description: "Premier educational institution founded in 1954. Known for its academic excellence and sprawling campus.",
-    latitude: 16.5350,
-    longitude: 80.6380,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Andhra_Loyola_College.jpg/320px-Andhra_Loyola_College.jpg"
-  },
-  {
-    id: 22,
-    name: "Siddhartha Medical College",
-    category: CATEGORIES.EDUCATIONAL,
-    description: "Established medical college offering MBBS and higher medical education with an attached teaching hospital.",
-    latitude: 16.5065,
-    longitude: 80.6532,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Siddhartha_Medical_College.jpg/320px-Siddhartha_Medical_College.jpg"
-  },
-  {
-    id: 23,
-    name: "Vijayawada City Central Library",
-    category: CATEGORIES.LIBRARY,
-    description: "Public library with extensive collection of books, periodicals and digital resources serving the city's residents.",
-    latitude: 16.5070,
-    longitude: 80.6400,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Central_Library%2C_Vijayawada.jpg/320px-Central_Library%2C_Vijayawada.jpg"
-  },
-  {
-    id: 24,
-    name: "Water Filtration Plant",
-    category: CATEGORIES.INFRASTRUCTURE,
-    description: "Municipal water treatment facility that processes and purifies water from Krishna River for the city's residents.",
-    latitude: 16.5150,
-    longitude: 80.6020,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Water_Treatment_Plant.jpg/320px-Water_Treatment_Plant.jpg"
-  },
-  {
-    id: 25,
-    name: "District Collector's Office",
-    category: CATEGORIES.GOVERNMENT,
-    description: "Administrative headquarters for the district collector and government services for Krishna district.",
-    latitude: 16.5156,
-    longitude: 80.6416,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/District_Collector_Office%2C_Krishna.jpg/320px-District_Collector_Office%2C_Krishna.jpg"
+    description: "A prominent private university offering undergraduate, postgraduate, and doctoral programs in engineering, sciences, liberal arts, and management.",
+    latitude: 16.4807,
+    longitude: 80.5010,
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/SRM_University%2C_Andhra_Pradesh.jpg/320px-SRM_University%2C_Andhra_Pradesh.jpg"
   }
 ];
 
@@ -433,6 +273,29 @@ const ElectoralMap = () => {
     critical: GARBAGE_COLLECTION_POINTS.filter(point => point.status === 'critical').length,
     averageFillLevel: Math.round(GARBAGE_COLLECTION_POINTS.reduce((sum, point) => sum + point.fillLevel, 0) / GARBAGE_COLLECTION_POINTS.length)
   });
+
+  // Handler for viewing location statistics
+const handleViewStats = (landmark) => {
+  // Navigate to stats view or open stats panel
+  addToast(`Loading statistics for ${landmark.name}...`, 'info', 2000);
+  
+  // Implementation will depend on your app's routing/state management
+  // For example, you might use:
+  // navigate(`/location/${landmark.id}/stats`);
+  // or open a modal with stats
+};
+
+// Handler for viewing location photos
+const handleViewPhotos = (landmark) => {
+  // Navigate to photos view or open photos gallery
+  addToast(`Loading photos for ${landmark.name}...`, 'info', 2000);
+  
+  // Implementation will depend on your app's routing/state management
+  // For example, you might use:
+  // navigate(`/location/${landmark.id}/photos`);
+  // or open a photos modal
+};
+
 
   // Filter landmarks by active category
   const filteredLandmarks = activeCategory 
@@ -783,54 +646,51 @@ const ElectoralMap = () => {
         }
 
         {/* Popup for selected landmark */}
-        {selectedLandmark && (
-          <Popup
-            latitude={selectedLandmark.latitude}
-            longitude={selectedLandmark.longitude}
-            closeOnClick={false}
-            onClose={() => setSelectedLandmark(null)}
-            anchor="top"
-            offset={20}
-            className="landmark-popup"
-            maxWidth="350px"
-          >
-            <div className="popup-content">
-              <div className="popup-header" style={{ backgroundColor: MARKER_COLORS[selectedLandmark.category] }}>
-                <h3>{selectedLandmark.name}</h3>
-                <span className="category-badge">
-                  {selectedLandmark.category.charAt(0).toUpperCase() + selectedLandmark.category.slice(1)}
-                </span>
-              </div>
-              
-              <div className="popup-image-container">
-                <img src={selectedLandmark.image} alt={selectedLandmark.name} />
-              </div>
-              
-              <p className="popup-description">{selectedLandmark.description}</p>
-              
-              <div className="popup-footer">
-                <button 
-                  className="popup-action-button"
-                  onClick={() => {
-                    window.open(`https://www.google.com/maps/dir/?api=1&destination=${selectedLandmark.latitude},${selectedLandmark.longitude}&travelmode=driving`, '_blank');
-                  }}
-                >
-                  <span className="action-icon">📍</span>
-                  Directions
-                </button>
-                <button 
-                  className="popup-action-button"
-                  onClick={() => {
-                    addToast("Feature coming soon!", "info", 2000);
-                  }}
-                >
-                  <span className="action-icon">📸</span>
-                  Photos
-                </button>
-              </div>
-            </div>
-          </Popup>
-        )}
+{selectedLandmark && (
+  <Popup
+    latitude={selectedLandmark.latitude}
+    longitude={selectedLandmark.longitude}
+    closeOnClick={false}
+    onClose={() => setSelectedLandmark(null)}
+    anchor="top"
+    offset={20}
+    className="landmark-popup"
+    maxWidth="350px"
+  >
+    <div className="popup-content">
+      <div className="popup-header" style={{ backgroundColor: MARKER_COLORS[selectedLandmark.category] }}>
+        <h3>{selectedLandmark.name}</h3>
+        <span className="category-badge">
+          {selectedLandmark.category.charAt(0).toUpperCase() + selectedLandmark.category.slice(1)}
+        </span>
+      </div>
+      
+      <div className="popup-image-container">
+        <img src={selectedLandmark.image} alt={selectedLandmark.name} />
+      </div>
+      
+      <p className="popup-description">{selectedLandmark.description}</p>
+      
+      <div className="popup-footer">
+        <button 
+          className="popup-action-button"
+          onClick={() => handleViewStats(selectedLandmark)}
+        >
+          <span className="action-icon">📊</span>
+          Stats
+        </button>
+        <button 
+          className="popup-action-button"
+          onClick={() => handleViewPhotos(selectedLandmark)}
+        >
+          <span className="action-icon">📷</span>
+          Photos
+        </button>
+      </div>
+    </div>
+  </Popup>
+)}
+
         
         {/* Popup for selected garbage collection point */}
         {selectedGarbage && (
