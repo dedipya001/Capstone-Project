@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_244245432-stock-photo-dump-park-trees-waste-nature3_jpg.rf.f094644c042dd5b5ec9b4d3b06070f41.jpg</filename>
+	<path>depositphotos_244245432-stock-photo-dump-park-trees-waste-nature3_jpg.rf.f094644c042dd5b5ec9b4d3b06070f41.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>153</xmin>
+			<xmax>619</xmax>
+			<ymin>237</ymin>
+			<ymax>611</ymax>
+		</bndbox>
+	</object>
+</annotation>

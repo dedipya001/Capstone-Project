@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_309518908-stock-photo-modern-plant-processing-sorting-municipal3_jpg.rf.41341b122d1437e0ae5eca6c31a8ec30.jpg</filename>
+	<path>depositphotos_309518908-stock-photo-modern-plant-processing-sorting-municipal3_jpg.rf.41341b122d1437e0ae5eca6c31a8ec30.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>190</xmin>
+			<xmax>629</xmax>
+			<ymin>121</ymin>
+			<ymax>378</ymax>
+		</bndbox>
+	</object>
+</annotation>

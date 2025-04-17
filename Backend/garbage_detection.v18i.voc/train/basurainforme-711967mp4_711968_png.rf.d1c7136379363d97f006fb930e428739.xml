@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>basurainforme-711967mp4_711968_png.rf.d1c7136379363d97f006fb930e428739.jpg</filename>
+	<path>basurainforme-711967mp4_711968_png.rf.d1c7136379363d97f006fb930e428739.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>1</xmin>
+			<xmax>638</xmax>
+			<ymin>192</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

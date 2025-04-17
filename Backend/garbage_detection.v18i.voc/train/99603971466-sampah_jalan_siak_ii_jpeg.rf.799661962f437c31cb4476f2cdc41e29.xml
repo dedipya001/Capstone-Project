@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>99603971466-sampah_jalan_siak_ii_jpeg.rf.799661962f437c31cb4476f2cdc41e29.jpg</filename>
+	<path>99603971466-sampah_jalan_siak_ii_jpeg.rf.799661962f437c31cb4476f2cdc41e29.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>209</xmin>
+			<xmax>422</xmax>
+			<ymin>226</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

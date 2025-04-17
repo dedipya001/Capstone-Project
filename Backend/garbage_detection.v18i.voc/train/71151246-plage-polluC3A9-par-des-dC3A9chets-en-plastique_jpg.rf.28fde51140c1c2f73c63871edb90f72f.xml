@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>71151246-plage-polluC3A9-par-des-dC3A9chets-en-plastique_jpg.rf.28fde51140c1c2f73c63871edb90f72f.jpg</filename>
+	<path>71151246-plage-polluC3A9-par-des-dC3A9chets-en-plastique_jpg.rf.28fde51140c1c2f73c63871edb90f72f.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>10</xmin>
+			<xmax>641</xmax>
+			<ymin>146</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

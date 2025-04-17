@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>poubelle_jpg.rf.fa89bd640c3c86e8fd4e0d26c9effcba.jpg</filename>
+	<path>poubelle_jpg.rf.fa89bd640c3c86e8fd4e0d26c9effcba.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

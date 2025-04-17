@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>munnizza-0_png.rf.c75c7d363e8d2d40914942b16a0c464f.jpg</filename>
+	<path>munnizza-0_png.rf.c75c7d363e8d2d40914942b16a0c464f.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>106</xmin>
+			<xmax>598</xmax>
+			<ymin>7</ymin>
+			<ymax>499</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_84093036-stock-photo-dead-cow-in-illegal-garbage3_jpg.rf.a780967f8c1ff3a99fe36c721db378f1.jpg</filename>
+	<path>depositphotos_84093036-stock-photo-dead-cow-in-illegal-garbage3_jpg.rf.a780967f8c1ff3a99fe36c721db378f1.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>188</xmin>
+			<xmax>641</xmax>
+			<ymin>77</ymin>
+			<ymax>568</ymax>
+		</bndbox>
+	</object>
+</annotation>

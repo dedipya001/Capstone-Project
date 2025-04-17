@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>WireAP_0183a5a7c97b41baa6221ab9482a0b5a_16x9_1600_jpg.rf.ab9ae7333646e27c0c1429a9bd894e40.jpg</filename>
+	<path>WireAP_0183a5a7c97b41baa6221ab9482a0b5a_16x9_1600_jpg.rf.ab9ae7333646e27c0c1429a9bd894e40.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>4</xmin>
+			<xmax>640</xmax>
+			<ymin>1</ymin>
+			<ymax>632</ymax>
+		</bndbox>
+	</object>
+</annotation>

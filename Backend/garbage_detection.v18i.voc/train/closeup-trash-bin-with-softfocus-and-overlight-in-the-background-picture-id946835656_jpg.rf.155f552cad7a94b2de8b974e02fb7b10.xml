@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>closeup-trash-bin-with-softfocus-and-overlight-in-the-background-picture-id946835656_jpg.rf.155f552cad7a94b2de8b974e02fb7b10.jpg</filename>
+	<path>closeup-trash-bin-with-softfocus-and-overlight-in-the-background-picture-id946835656_jpg.rf.155f552cad7a94b2de8b974e02fb7b10.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>107</xmin>
+			<xmax>601</xmax>
+			<ymin>250</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_188918178-stock-photo-close-piles-garbage-construction-site3_jpg.rf.73542202afe7a05a74a0dd5b6ebb29f5.jpg</filename>
+	<path>depositphotos_188918178-stock-photo-close-piles-garbage-construction-site3_jpg.rf.73542202afe7a05a74a0dd5b6ebb29f5.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>139</xmin>
+			<xmax>515</xmax>
+			<ymin>100</ymin>
+			<ymax>476</ymax>
+		</bndbox>
+	</object>
+</annotation>

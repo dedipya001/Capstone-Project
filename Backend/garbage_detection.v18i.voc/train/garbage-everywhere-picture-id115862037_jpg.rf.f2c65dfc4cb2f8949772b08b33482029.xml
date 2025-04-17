@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>garbage-everywhere-picture-id115862037_jpg.rf.f2c65dfc4cb2f8949772b08b33482029.jpg</filename>
+	<path>garbage-everywhere-picture-id115862037_jpg.rf.f2c65dfc4cb2f8949772b08b33482029.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>75</xmin>
+			<xmax>567</xmax>
+			<ymin>1</ymin>
+			<ymax>485</ymax>
+		</bndbox>
+	</object>
+</annotation>

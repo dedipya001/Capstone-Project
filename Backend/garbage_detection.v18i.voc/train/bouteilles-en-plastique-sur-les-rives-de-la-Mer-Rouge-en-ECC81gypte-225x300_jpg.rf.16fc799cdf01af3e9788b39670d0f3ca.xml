@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>bouteilles-en-plastique-sur-les-rives-de-la-Mer-Rouge-en-ECC81gypte-225x300_jpg.rf.16fc799cdf01af3e9788b39670d0f3ca.jpg</filename>
+	<path>bouteilles-en-plastique-sur-les-rives-de-la-Mer-Rouge-en-ECC81gypte-225x300_jpg.rf.16fc799cdf01af3e9788b39670d0f3ca.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>233</xmin>
+			<xmax>641</xmax>
+			<ymin>7</ymin>
+			<ymax>633</ymax>
+		</bndbox>
+	</object>
+</annotation>

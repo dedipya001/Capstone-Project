@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_362681624-stock-photo-illegal-landfill-household-garbage-people3_jpg.rf.58b41d9d17978399ed33ce052c70aff1.jpg</filename>
+	<path>depositphotos_362681624-stock-photo-illegal-landfill-household-garbage-people3_jpg.rf.58b41d9d17978399ed33ce052c70aff1.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>152</xmin>
+			<xmax>263</xmax>
+			<ymin>193</ymin>
+			<ymax>304</ymax>
+		</bndbox>
+	</object>
+</annotation>

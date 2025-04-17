@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>lixoLuanda-1140x640_jpg.rf.9fe602681ac9ea5ff0492ab3e028a803.jpg</filename>
+	<path>lixoLuanda-1140x640_jpg.rf.9fe602681ac9ea5ff0492ab3e028a803.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>1</xmin>
+			<xmax>486</xmax>
+			<ymin>52</ymin>
+			<ymax>586</ymax>
+		</bndbox>
+	</object>
+</annotation>

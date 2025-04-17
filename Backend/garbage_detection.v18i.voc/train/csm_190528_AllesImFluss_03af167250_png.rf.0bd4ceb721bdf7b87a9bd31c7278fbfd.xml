@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>csm_190528_AllesImFluss_03af167250_png.rf.0bd4ceb721bdf7b87a9bd31c7278fbfd.jpg</filename>
+	<path>csm_190528_AllesImFluss_03af167250_png.rf.0bd4ceb721bdf7b87a9bd31c7278fbfd.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

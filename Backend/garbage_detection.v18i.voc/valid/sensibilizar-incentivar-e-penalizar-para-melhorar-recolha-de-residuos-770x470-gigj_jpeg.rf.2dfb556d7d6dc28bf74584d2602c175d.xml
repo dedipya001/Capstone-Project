@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>sensibilizar-incentivar-e-penalizar-para-melhorar-recolha-de-residuos-770x470-gigj_jpeg.rf.2dfb556d7d6dc28bf74584d2602c175d.jpg</filename>
+	<path>sensibilizar-incentivar-e-penalizar-para-melhorar-recolha-de-residuos-770x470-gigj_jpeg.rf.2dfb556d7d6dc28bf74584d2602c175d.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>154</xmin>
+			<xmax>641</xmax>
+			<ymin>121</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

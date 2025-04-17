@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>marseille-ordures-menageres-greve_png.rf.035189122c69333c87b0c51b62ff5a85.jpg</filename>
+	<path>marseille-ordures-menageres-greve_png.rf.035189122c69333c87b0c51b62ff5a85.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>116</xmin>
+			<xmax>618</xmax>
+			<ymin>1</ymin>
+			<ymax>480</ymax>
+		</bndbox>
+	</object>
+</annotation>

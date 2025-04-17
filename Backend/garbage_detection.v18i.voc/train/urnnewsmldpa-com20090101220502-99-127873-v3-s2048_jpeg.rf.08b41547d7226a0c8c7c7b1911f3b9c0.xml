@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>urnnewsmldpa-com20090101220502-99-127873-v3-s2048_jpeg.rf.08b41547d7226a0c8c7c7b1911f3b9c0.jpg</filename>
+	<path>urnnewsmldpa-com20090101220502-99-127873-v3-s2048_jpeg.rf.08b41547d7226a0c8c7c7b1911f3b9c0.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>239</xmin>
+			<xmax>641</xmax>
+			<ymin>188</ymin>
+			<ymax>621</ymax>
+		</bndbox>
+	</object>
+</annotation>

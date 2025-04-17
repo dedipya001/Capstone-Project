@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>22Rote_Linie_fC3BCr_Kohle2C_Erdgas_und_MC3BCll22_demonstration_Berlin_69_jpg.rf.96b7da40d94b39d36b88e618e304caa9.jpg</filename>
+	<path>22Rote_Linie_fC3BCr_Kohle2C_Erdgas_und_MC3BCll22_demonstration_Berlin_69_jpg.rf.96b7da40d94b39d36b88e618e304caa9.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

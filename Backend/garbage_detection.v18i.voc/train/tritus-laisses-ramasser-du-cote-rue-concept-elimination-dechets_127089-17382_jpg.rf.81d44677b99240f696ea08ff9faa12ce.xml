@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>tritus-laisses-ramasser-du-cote-rue-concept-elimination-dechets_127089-17382_jpg.rf.81d44677b99240f696ea08ff9faa12ce.jpg</filename>
+	<path>tritus-laisses-ramasser-du-cote-rue-concept-elimination-dechets_127089-17382_jpg.rf.81d44677b99240f696ea08ff9faa12ce.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>89</xmin>
+			<xmax>364</xmax>
+			<ymin>174</ymin>
+			<ymax>536</ymax>
+		</bndbox>
+	</object>
+</annotation>

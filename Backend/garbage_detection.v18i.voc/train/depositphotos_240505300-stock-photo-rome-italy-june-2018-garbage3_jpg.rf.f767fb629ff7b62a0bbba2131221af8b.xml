@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_240505300-stock-photo-rome-italy-june-2018-garbage3_jpg.rf.f767fb629ff7b62a0bbba2131221af8b.jpg</filename>
+	<path>depositphotos_240505300-stock-photo-rome-italy-june-2018-garbage3_jpg.rf.f767fb629ff7b62a0bbba2131221af8b.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>285</xmin>
+			<xmax>599</xmax>
+			<ymin>162</ymin>
+			<ymax>476</ymax>
+		</bndbox>
+	</object>
+</annotation>

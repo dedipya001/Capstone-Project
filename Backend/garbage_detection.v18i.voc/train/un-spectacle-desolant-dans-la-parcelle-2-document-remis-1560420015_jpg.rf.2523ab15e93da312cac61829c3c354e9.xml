@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>un-spectacle-desolant-dans-la-parcelle-2-document-remis-1560420015_jpg.rf.2523ab15e93da312cac61829c3c354e9.jpg</filename>
+	<path>un-spectacle-desolant-dans-la-parcelle-2-document-remis-1560420015_jpg.rf.2523ab15e93da312cac61829c3c354e9.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>197</xmin>
+			<xmax>477</xmax>
+			<ymin>1</ymin>
+			<ymax>610</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>1636621964-rifiuti-roma-JPG_jpg.rf.cb9d32760c46d830a9a2257af3f807e5.jpg</filename>
+	<path>1636621964-rifiuti-roma-JPG_jpg.rf.cb9d32760c46d830a9a2257af3f807e5.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>1</xmin>
+			<xmax>599</xmax>
+			<ymin>1</ymin>
+			<ymax>577</ymax>
+		</bndbox>
+	</object>
+</annotation>

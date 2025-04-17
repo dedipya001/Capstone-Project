@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>P_sacchiTAG_jpg.rf.b9938a8e53e2b1549be71a7628f02e30.jpg</filename>
+	<path>P_sacchiTAG_jpg.rf.b9938a8e53e2b1549be71a7628f02e30.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>86</xmin>
+			<xmax>394</xmax>
+			<ymin>233</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>rue-de-la-ville-de-new-york-avec-des-tas-d-ordures-sur-le-trottoir-cnhcgk_jpg.rf.a9faa6961b655547cd7ec94bf01c22f0.jpg</filename>
+	<path>rue-de-la-ville-de-new-york-avec-des-tas-d-ordures-sur-le-trottoir-cnhcgk_jpg.rf.a9faa6961b655547cd7ec94bf01c22f0.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>1</xmin>
+			<xmax>334</xmax>
+			<ymin>47</ymin>
+			<ymax>603</ymax>
+		</bndbox>
+	</object>
+</annotation>

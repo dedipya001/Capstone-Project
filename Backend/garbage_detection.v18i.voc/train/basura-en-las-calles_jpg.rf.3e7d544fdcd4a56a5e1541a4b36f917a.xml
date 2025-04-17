@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>basura-en-las-calles_jpg.rf.3e7d544fdcd4a56a5e1541a4b36f917a.jpg</filename>
+	<path>basura-en-las-calles_jpg.rf.3e7d544fdcd4a56a5e1541a4b36f917a.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>36</xmin>
+			<xmax>606</xmax>
+			<ymin>1</ymin>
+			<ymax>536</ymax>
+		</bndbox>
+	</object>
+</annotation>

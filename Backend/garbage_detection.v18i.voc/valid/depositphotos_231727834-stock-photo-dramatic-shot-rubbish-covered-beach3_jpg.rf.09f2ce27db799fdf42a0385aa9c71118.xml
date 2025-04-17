@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_231727834-stock-photo-dramatic-shot-rubbish-covered-beach3_jpg.rf.09f2ce27db799fdf42a0385aa9c71118.jpg</filename>
+	<path>depositphotos_231727834-stock-photo-dramatic-shot-rubbish-covered-beach3_jpg.rf.09f2ce27db799fdf42a0385aa9c71118.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>1</xmin>
+			<xmax>641</xmax>
+			<ymin>1</ymin>
+			<ymax>607</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>Bildschirmfoto-2018-11-09-um-12-15-28-2340x1208-c-default_jpeg.rf.3125ab6687c58c995a08d6b1bb353925.jpg</filename>
+	<path>Bildschirmfoto-2018-11-09-um-12-15-28-2340x1208-c-default_jpeg.rf.3125ab6687c58c995a08d6b1bb353925.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>Muell-Crellemarkt_jpg.rf.2aabc0f4ed99952445a77e7fee0829cd.jpg</filename>
+	<path>Muell-Crellemarkt_jpg.rf.2aabc0f4ed99952445a77e7fee0829cd.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>74</xmin>
+			<xmax>548</xmax>
+			<ymin>210</ymin>
+			<ymax>602</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>dumpsters-being-full-with-garbage-in-the-evening-picture-id1210138031_jpg.rf.a9f29325dc063f41039aa147d8704c61.jpg</filename>
+	<path>dumpsters-being-full-with-garbage-in-the-evening-picture-id1210138031_jpg.rf.a9f29325dc063f41039aa147d8704c61.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>5</xmin>
+			<xmax>641</xmax>
+			<ymin>1</ymin>
+			<ymax>615</ymax>
+		</bndbox>
+	</object>
+</annotation>

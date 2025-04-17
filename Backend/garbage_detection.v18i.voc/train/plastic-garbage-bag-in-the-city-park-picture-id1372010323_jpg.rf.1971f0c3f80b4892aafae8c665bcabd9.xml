@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>plastic-garbage-bag-in-the-city-park-picture-id1372010323_jpg.rf.1971f0c3f80b4892aafae8c665bcabd9.jpg</filename>
+	<path>plastic-garbage-bag-in-the-city-park-picture-id1372010323_jpg.rf.1971f0c3f80b4892aafae8c665bcabd9.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>183</xmin>
+			<xmax>539</xmax>
+			<ymin>130</ymin>
+			<ymax>619</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_264271102-stock-photo-children-find-junk-for-sale3_jpg.rf.8d84cf673a12008cdf9a8947bcb1d223.jpg</filename>
+	<path>depositphotos_264271102-stock-photo-children-find-junk-for-sale3_jpg.rf.8d84cf673a12008cdf9a8947bcb1d223.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>134</xmin>
+			<xmax>548</xmax>
+			<ymin>12</ymin>
+			<ymax>362</ymax>
+		</bndbox>
+	</object>
+</annotation>

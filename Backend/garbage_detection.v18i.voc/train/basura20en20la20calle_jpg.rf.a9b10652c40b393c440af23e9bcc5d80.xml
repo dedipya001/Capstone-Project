@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>basura20en20la20calle_jpg.rf.a9b10652c40b393c440af23e9bcc5d80.jpg</filename>
+	<path>basura20en20la20calle_jpg.rf.a9b10652c40b393c440af23e9bcc5d80.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>279</xmin>
+			<xmax>641</xmax>
+			<ymin>80</ymin>
+			<ymax>449</ymax>
+		</bndbox>
+	</object>
+</annotation>

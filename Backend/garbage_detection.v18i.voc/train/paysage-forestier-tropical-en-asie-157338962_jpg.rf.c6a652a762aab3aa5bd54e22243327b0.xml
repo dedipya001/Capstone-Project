@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>paysage-forestier-tropical-en-asie-157338962_jpg.rf.c6a652a762aab3aa5bd54e22243327b0.jpg</filename>
+	<path>paysage-forestier-tropical-en-asie-157338962_jpg.rf.c6a652a762aab3aa5bd54e22243327b0.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

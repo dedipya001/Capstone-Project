@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>rifiuti-6-1-1024x768_jpg.rf.7f51caca5b17c7487437b238890f9dea.jpg</filename>
+	<path>rifiuti-6-1-1024x768_jpg.rf.7f51caca5b17c7487437b238890f9dea.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>11</xmin>
+			<xmax>543</xmax>
+			<ymin>245</ymin>
+			<ymax>491</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>Blog_littering_vermeiden_full_png.rf.369464659cf40ed72e8aa6c1147f7019.jpg</filename>
+	<path>Blog_littering_vermeiden_full_png.rf.369464659cf40ed72e8aa6c1147f7019.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

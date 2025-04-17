@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>FORET-POLLUEE-FRANCE-720x340_jpeg.rf.193cdcee68a05ba640e424c414eeb63b.jpg</filename>
+	<path>FORET-POLLUEE-FRANCE-720x340_jpeg.rf.193cdcee68a05ba640e424c414eeb63b.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>19</xmin>
+			<xmax>641</xmax>
+			<ymin>9</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>albaclick-shop-stage_jpg.rf.b6c2e7e8fa5b3df5b91fc028c6e71dc6.jpg</filename>
+	<path>albaclick-shop-stage_jpg.rf.b6c2e7e8fa5b3df5b91fc028c6e71dc6.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

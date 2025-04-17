@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_103015032-stock-photo-outdoor-rubbish-dump-potentially-store3_jpg.rf.c3186e4bc600ffaf9d809f172e8b318c.jpg</filename>
+	<path>depositphotos_103015032-stock-photo-outdoor-rubbish-dump-potentially-store3_jpg.rf.c3186e4bc600ffaf9d809f172e8b318c.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>36</xmin>
+			<xmax>627</xmax>
+			<ymin>134</ymin>
+			<ymax>607</ymax>
+		</bndbox>
+	</object>
+</annotation>

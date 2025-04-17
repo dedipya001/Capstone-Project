@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>lavagem_de_ruas_1-825x510_jpg.rf.cc0b9c18ac7babc56620a21fbaa43f78.jpg</filename>
+	<path>lavagem_de_ruas_1-825x510_jpg.rf.cc0b9c18ac7babc56620a21fbaa43f78.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

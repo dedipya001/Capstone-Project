@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_330332406-stock-photo-old-house-completely-destroyed-in3_jpg.rf.d9303eccb16e11fe65ccf6b9a3b7674b.jpg</filename>
+	<path>depositphotos_330332406-stock-photo-old-house-completely-destroyed-in3_jpg.rf.d9303eccb16e11fe65ccf6b9a3b7674b.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>241</xmin>
+			<xmax>615</xmax>
+			<ymin>272</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

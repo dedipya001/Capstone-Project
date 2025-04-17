@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>poubelle-dechets-dans-rue-new-york-tasses-cafe-recyclage-dechets_73110-8929_jpg.rf.ba8abd0b76db86682c802a64198e16f0.jpg</filename>
+	<path>poubelle-dechets-dans-rue-new-york-tasses-cafe-recyclage-dechets_73110-8929_jpg.rf.ba8abd0b76db86682c802a64198e16f0.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

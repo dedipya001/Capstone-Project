@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>abfallvermeidung_quiz_jpg.rf.38d56d01a776c27a06d94fb1b0d1e483.jpg</filename>
+	<path>abfallvermeidung_quiz_jpg.rf.38d56d01a776c27a06d94fb1b0d1e483.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

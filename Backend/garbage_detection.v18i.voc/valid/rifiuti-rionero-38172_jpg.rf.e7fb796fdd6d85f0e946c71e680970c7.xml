@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>rifiuti-rionero-38172_jpg.rf.e7fb796fdd6d85f0e946c71e680970c7.jpg</filename>
+	<path>rifiuti-rionero-38172_jpg.rf.e7fb796fdd6d85f0e946c71e680970c7.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>130</xmin>
+			<xmax>561</xmax>
+			<ymin>187</ymin>
+			<ymax>514</ymax>
+		</bndbox>
+	</object>
+</annotation>

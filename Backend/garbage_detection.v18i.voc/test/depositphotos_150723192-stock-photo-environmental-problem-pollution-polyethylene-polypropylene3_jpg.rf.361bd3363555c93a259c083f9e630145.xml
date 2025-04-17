@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_150723192-stock-photo-environmental-problem-pollution-polyethylene-polypropylene3_jpg.rf.361bd3363555c93a259c083f9e630145.jpg</filename>
+	<path>depositphotos_150723192-stock-photo-environmental-problem-pollution-polyethylene-polypropylene3_jpg.rf.361bd3363555c93a259c083f9e630145.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>160</xmin>
+			<xmax>493</xmax>
+			<ymin>224</ymin>
+			<ymax>523</ymax>
+		</bndbox>
+	</object>
+</annotation>

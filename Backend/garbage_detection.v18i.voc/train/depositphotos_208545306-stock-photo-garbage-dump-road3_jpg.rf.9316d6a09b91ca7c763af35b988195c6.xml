@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_208545306-stock-photo-garbage-dump-road3_jpg.rf.9316d6a09b91ca7c763af35b988195c6.jpg</filename>
+	<path>depositphotos_208545306-stock-photo-garbage-dump-road3_jpg.rf.9316d6a09b91ca7c763af35b988195c6.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>83</xmin>
+			<xmax>498</xmax>
+			<ymin>1</ymin>
+			<ymax>406</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>1200px-HandewitterWald_jpg.rf.b09f008a6632759f4a75b29117bab9ba.jpg</filename>
+	<path>1200px-HandewitterWald_jpg.rf.b09f008a6632759f4a75b29117bab9ba.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

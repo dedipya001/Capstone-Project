@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>rifiuti-messina_jpg.rf.042e3dbc6e0777da108f191f3aad5c41.jpg</filename>
+	<path>rifiuti-messina_jpg.rf.042e3dbc6e0777da108f191f3aad5c41.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>224</xmin>
+			<xmax>580</xmax>
+			<ymin>301</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

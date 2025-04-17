@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>contentores-770x439_c_jpg.rf.ffe1160673d44b754333d89071152d96.jpg</filename>
+	<path>contentores-770x439_c_jpg.rf.ffe1160673d44b754333d89071152d96.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

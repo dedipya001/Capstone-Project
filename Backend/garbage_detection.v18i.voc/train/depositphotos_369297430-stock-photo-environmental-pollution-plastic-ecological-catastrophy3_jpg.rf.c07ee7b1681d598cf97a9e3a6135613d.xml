@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_369297430-stock-photo-environmental-pollution-plastic-ecological-catastrophy3_jpg.rf.c07ee7b1681d598cf97a9e3a6135613d.jpg</filename>
+	<path>depositphotos_369297430-stock-photo-environmental-pollution-plastic-ecological-catastrophy3_jpg.rf.c07ee7b1681d598cf97a9e3a6135613d.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>144</xmin>
+			<xmax>517</xmax>
+			<ymin>134</ymin>
+			<ymax>506</ymax>
+		</bndbox>
+	</object>
+</annotation>

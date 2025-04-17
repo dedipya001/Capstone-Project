@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>pile-of-garbage-plastic-black-bag-trash-bag-waste-on-footpath-dirty-picture-id1126578792_jpg.rf.bdf0ba8a1e0a3f546bfd0997eb47110f.jpg</filename>
+	<path>pile-of-garbage-plastic-black-bag-trash-bag-waste-on-footpath-dirty-picture-id1126578792_jpg.rf.bdf0ba8a1e0a3f546bfd0997eb47110f.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>54</xmin>
+			<xmax>523</xmax>
+			<ymin>32</ymin>
+			<ymax>501</ymax>
+		</bndbox>
+	</object>
+</annotation>

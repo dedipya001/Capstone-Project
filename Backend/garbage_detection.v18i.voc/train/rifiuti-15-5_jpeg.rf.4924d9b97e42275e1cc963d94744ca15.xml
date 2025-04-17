@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>rifiuti-15-5_jpeg.rf.4924d9b97e42275e1cc963d94744ca15.jpg</filename>
+	<path>rifiuti-15-5_jpeg.rf.4924d9b97e42275e1cc963d94744ca15.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>143</xmin>
+			<xmax>640</xmax>
+			<ymin>145</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>1280x680_075_acar-notitle200325_npwwq_jpg.rf.556cb5f262517b5b56e3242a5816651a.jpg</filename>
+	<path>1280x680_075_acar-notitle200325_npwwq_jpg.rf.556cb5f262517b5b56e3242a5816651a.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

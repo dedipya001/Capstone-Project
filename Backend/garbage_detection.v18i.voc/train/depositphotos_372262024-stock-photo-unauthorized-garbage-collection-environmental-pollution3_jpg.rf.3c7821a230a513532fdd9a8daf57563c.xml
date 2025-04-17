@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_372262024-stock-photo-unauthorized-garbage-collection-environmental-pollution3_jpg.rf.3c7821a230a513532fdd9a8daf57563c.jpg</filename>
+	<path>depositphotos_372262024-stock-photo-unauthorized-garbage-collection-environmental-pollution3_jpg.rf.3c7821a230a513532fdd9a8daf57563c.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>167</xmin>
+			<xmax>571</xmax>
+			<ymin>124</ymin>
+			<ymax>528</ymax>
+		</bndbox>
+	</object>
+</annotation>

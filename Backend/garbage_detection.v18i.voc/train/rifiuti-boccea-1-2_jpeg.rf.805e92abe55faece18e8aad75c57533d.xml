@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>rifiuti-boccea-1-2_jpeg.rf.805e92abe55faece18e8aad75c57533d.jpg</filename>
+	<path>rifiuti-boccea-1-2_jpeg.rf.805e92abe55faece18e8aad75c57533d.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>312</xmin>
+			<xmax>641</xmax>
+			<ymin>35</ymin>
+			<ymax>367</ymax>
+		</bndbox>
+	</object>
+</annotation>

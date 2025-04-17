@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_214840810-stock-photo-garbage-dump-ecological-disaster3_jpg.rf.abb914615c498dc995c54988469baadb.jpg</filename>
+	<path>depositphotos_214840810-stock-photo-garbage-dump-ecological-disaster3_jpg.rf.abb914615c498dc995c54988469baadb.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>125</xmin>
+			<xmax>588</xmax>
+			<ymin>195</ymin>
+			<ymax>630</ymax>
+		</bndbox>
+	</object>
+</annotation>

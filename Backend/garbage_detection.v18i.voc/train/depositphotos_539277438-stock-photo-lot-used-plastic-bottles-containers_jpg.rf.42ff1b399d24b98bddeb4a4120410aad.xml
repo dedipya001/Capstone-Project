@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_539277438-stock-photo-lot-used-plastic-bottles-containers_jpg.rf.42ff1b399d24b98bddeb4a4120410aad.jpg</filename>
+	<path>depositphotos_539277438-stock-photo-lot-used-plastic-bottles-containers_jpg.rf.42ff1b399d24b98bddeb4a4120410aad.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>101</xmin>
+			<xmax>612</xmax>
+			<ymin>71</ymin>
+			<ymax>583</ymax>
+		</bndbox>
+	</object>
+</annotation>

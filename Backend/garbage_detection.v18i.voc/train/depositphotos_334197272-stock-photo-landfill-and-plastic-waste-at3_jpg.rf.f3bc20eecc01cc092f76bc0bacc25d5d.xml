@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_334197272-stock-photo-landfill-and-plastic-waste-at3_jpg.rf.f3bc20eecc01cc092f76bc0bacc25d5d.jpg</filename>
+	<path>depositphotos_334197272-stock-photo-landfill-and-plastic-waste-at3_jpg.rf.f3bc20eecc01cc092f76bc0bacc25d5d.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>48</xmin>
+			<xmax>386</xmax>
+			<ymin>168</ymin>
+			<ymax>539</ymax>
+		</bndbox>
+	</object>
+</annotation>

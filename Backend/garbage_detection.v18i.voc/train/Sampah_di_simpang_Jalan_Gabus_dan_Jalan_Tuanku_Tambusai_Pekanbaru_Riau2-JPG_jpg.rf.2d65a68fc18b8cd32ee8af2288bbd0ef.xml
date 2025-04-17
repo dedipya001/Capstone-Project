@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>Sampah_di_simpang_Jalan_Gabus_dan_Jalan_Tuanku_Tambusai_Pekanbaru_Riau2-JPG_jpg.rf.2d65a68fc18b8cd32ee8af2288bbd0ef.jpg</filename>
+	<path>Sampah_di_simpang_Jalan_Gabus_dan_Jalan_Tuanku_Tambusai_Pekanbaru_Riau2-JPG_jpg.rf.2d65a68fc18b8cd32ee8af2288bbd0ef.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>170</xmin>
+			<xmax>462</xmax>
+			<ymin>194</ymin>
+			<ymax>486</ymax>
+		</bndbox>
+	</object>
+</annotation>

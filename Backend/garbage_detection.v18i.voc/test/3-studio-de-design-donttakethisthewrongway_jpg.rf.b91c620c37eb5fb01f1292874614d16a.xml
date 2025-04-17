@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>3-studio-de-design-donttakethisthewrongway_jpg.rf.b91c620c37eb5fb01f1292874614d16a.jpg</filename>
+	<path>3-studio-de-design-donttakethisthewrongway_jpg.rf.b91c620c37eb5fb01f1292874614d16a.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>10</xmin>
+			<xmax>311</xmax>
+			<ymin>351</ymin>
+			<ymax>598</ymax>
+		</bndbox>
+	</object>
+</annotation>

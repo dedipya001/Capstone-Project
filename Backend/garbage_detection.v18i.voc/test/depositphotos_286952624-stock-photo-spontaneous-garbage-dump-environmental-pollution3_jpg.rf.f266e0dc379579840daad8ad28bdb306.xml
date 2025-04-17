@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_286952624-stock-photo-spontaneous-garbage-dump-environmental-pollution3_jpg.rf.f266e0dc379579840daad8ad28bdb306.jpg</filename>
+	<path>depositphotos_286952624-stock-photo-spontaneous-garbage-dump-environmental-pollution3_jpg.rf.f266e0dc379579840daad8ad28bdb306.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>238</xmin>
+			<xmax>610</xmax>
+			<ymin>195</ymin>
+			<ymax>608</ymax>
+		</bndbox>
+	</object>
+</annotation>

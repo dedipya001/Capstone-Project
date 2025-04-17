@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>poluiC3A7C3A3o-da-floresta-78526311_jpg.rf.acc74d0630a8e96120bec113b6785571.jpg</filename>
+	<path>poluiC3A7C3A3o-da-floresta-78526311_jpg.rf.acc74d0630a8e96120bec113b6785571.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>281</xmin>
+			<xmax>620</xmax>
+			<ymin>265</ymin>
+			<ymax>572</ymax>
+		</bndbox>
+	</object>
+</annotation>

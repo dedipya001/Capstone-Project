@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>immondizia-pigneto-roma-1200x900_jpeg.rf.5dc94411ba6f17f9619c440a23886e64.jpg</filename>
+	<path>immondizia-pigneto-roma-1200x900_jpeg.rf.5dc94411ba6f17f9619c440a23886e64.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>18</xmin>
+			<xmax>470</xmax>
+			<ymin>5</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

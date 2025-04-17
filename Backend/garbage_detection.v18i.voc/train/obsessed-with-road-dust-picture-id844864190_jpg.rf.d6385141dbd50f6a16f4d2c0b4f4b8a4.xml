@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>obsessed-with-road-dust-picture-id844864190_jpg.rf.d6385141dbd50f6a16f4d2c0b4f4b8a4.jpg</filename>
+	<path>obsessed-with-road-dust-picture-id844864190_jpg.rf.d6385141dbd50f6a16f4d2c0b4f4b8a4.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>6</xmin>
+			<xmax>641</xmax>
+			<ymin>26</ymin>
+			<ymax>516</ymax>
+		</bndbox>
+	</object>
+</annotation>

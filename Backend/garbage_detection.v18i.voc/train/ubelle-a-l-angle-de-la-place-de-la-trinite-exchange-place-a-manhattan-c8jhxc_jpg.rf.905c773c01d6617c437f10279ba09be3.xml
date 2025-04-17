@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>ubelle-a-l-angle-de-la-place-de-la-trinite-exchange-place-a-manhattan-c8jhxc_jpg.rf.905c773c01d6617c437f10279ba09be3.jpg</filename>
+	<path>ubelle-a-l-angle-de-la-place-de-la-trinite-exchange-place-a-manhattan-c8jhxc_jpg.rf.905c773c01d6617c437f10279ba09be3.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>1</xmin>
+			<xmax>515</xmax>
+			<ymin>34</ymin>
+			<ymax>574</ymax>
+		</bndbox>
+	</object>
+</annotation>

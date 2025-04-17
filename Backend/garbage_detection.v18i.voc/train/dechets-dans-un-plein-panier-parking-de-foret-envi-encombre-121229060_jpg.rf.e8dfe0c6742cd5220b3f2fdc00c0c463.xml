@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>dechets-dans-un-plein-panier-parking-de-foret-envi-encombre-121229060_jpg.rf.e8dfe0c6742cd5220b3f2fdc00c0c463.jpg</filename>
+	<path>dechets-dans-un-plein-panier-parking-de-foret-envi-encombre-121229060_jpg.rf.e8dfe0c6742cd5220b3f2fdc00c0c463.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>94</xmin>
+			<xmax>576</xmax>
+			<ymin>37</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

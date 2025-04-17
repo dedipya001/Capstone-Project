@@ -1,0 +1,14 @@
+<annotation>
+	<folder></folder>
+	<filename>Angola-5_jpg.rf.8dc62e249f371f424017e07887e1bbb7.jpg</filename>
+	<path>Angola-5_jpg.rf.8dc62e249f371f424017e07887e1bbb7.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

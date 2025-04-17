@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>giant-trash-bin-for-business-or-industrial-use-picture-id527010271_jpg.rf.ebaab504143a2f56459ec630c6096658.jpg</filename>
+	<path>giant-trash-bin-for-business-or-industrial-use-picture-id527010271_jpg.rf.ebaab504143a2f56459ec630c6096658.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>42</xmin>
+			<xmax>641</xmax>
+			<ymin>1</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>

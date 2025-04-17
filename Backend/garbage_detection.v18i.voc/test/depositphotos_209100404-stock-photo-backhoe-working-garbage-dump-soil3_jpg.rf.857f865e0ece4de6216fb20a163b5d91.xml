@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>depositphotos_209100404-stock-photo-backhoe-working-garbage-dump-soil3_jpg.rf.857f865e0ece4de6216fb20a163b5d91.jpg</filename>
+	<path>depositphotos_209100404-stock-photo-backhoe-working-garbage-dump-soil3_jpg.rf.857f865e0ece4de6216fb20a163b5d91.jpg</path>
+	<source>
+		<database>roboflow.com</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>garbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>90</xmin>
+			<xmax>582</xmax>
+			<ymin>294</ymin>
+			<ymax>641</ymax>
+		</bndbox>
+	</object>
+</annotation>
