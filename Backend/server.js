@@ -191,3 +191,127 @@ app.get('/api/stats/location/:locationId', async (req, res) => {
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// At the end of server.js, after app.listen()
+const chokidar = require('chokidar');
+const fs = require('fs');
+const path = require('path');
+const Photo = require('./models/Photo');
+
+// Define dataset paths to monitor
+const datasetPaths = {
+  '7m': '/Users/abhay.raj1/Desktop/Capstone-Project/Backend/7metres', 
+  '10m': '/Users/abhay.raj1/Desktop/Capstone-Project/Backend/10metres'
+};
+
+// Create folder structure for a location if it doesn't exist
+const createLocationFolders = (locationId) => {
+  const baseDir = path.join(__dirname, 'uploads', 'locationPhotos', locationId.toString());
+  const subDirs = ['7m', '10m'];
+
+  subDirs.forEach((subDir) => {
+    const dirPath = path.join(baseDir, subDir);
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true });
+    }
+  });
+};
+
+// Function to save photo to database
+const savePhotoToDB = async (locationId, subDir, filePath, fileName, captureDate) => {
+  try {
+    const photo = new Photo({
+      locationId,
+      captureDate,
+      filePath: filePath.replace(__dirname, ''),
+      fileName,
+      caption: `Photo from ${subDir}`,
+      metadata: {
+        width: 800, // Placeholder
+        height: 600, // Placeholder
+        size: fs.statSync(filePath).size
+      },
+      stats: {
+        peopleCount: Math.floor(Math.random() * 20),
+        vehicleCount: Math.floor(Math.random() * 10),
+        garbageLevel: ['low', 'medium', 'high', 'none'][Math.floor(Math.random() * 4)],
+        weatherCondition: ['sunny', 'cloudy', 'rainy', 'foggy', 'unknown'][Math.floor(Math.random() * 5)]
+      }
+    });
+
+    await photo.save();
+    console.log(`Photo saved to database: ${fileName}`);
+  } catch (error) {
+    console.error(`Error saving photo to database: ${error.message}`);
+  }
+};
+
+// Function to watch dataset and process new images
+const watchDataset = (datasetPath, subDir) => {
+  console.log(`Watching dataset: ${datasetPath} for ${subDir}`);
+  
+  const watcher = chokidar.watch(datasetPath, { 
+    persistent: true,
+    ignoreInitial: false, // Process existing files when starting
+    awaitWriteFinish: true // Wait until file is fully written
+  });
+
+  watcher.on('add', async (filePath) => {
+    try {
+      // Check if it's an image file
+      if (!/\.(jpg|jpeg|png|gif)$/i.test(filePath)) {
+        return;
+      }
+
+      console.log(`Processing file: ${filePath}`);
+      const fileName = path.basename(filePath);
+
+      // Get all locations
+      const Location = mongoose.model('Location');
+      const locations = await Location.find();
+
+      // Process for each location
+      for (const location of locations) {
+        const locationId = location.id;
+        
+        // Create folders if they don't exist
+        createLocationFolders(locationId);
+        
+        // Set the date to today
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1;
+        const day = now.getDate();
+        
+        // Create day folder if it doesn't exist
+        const dateFolderName = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        const dayFolder = path.join(__dirname, 'uploads', 'locationPhotos', locationId.toString(), subDir, dateFolderName);
+        
+        if (!fs.existsSync(dayFolder)) {
+          fs.mkdirSync(dayFolder, { recursive: true });
+        }
+        
+        // Create a unique filename
+        const uniqueFileName = `${locationId}_${subDir}_${dateFolderName}_${Date.now()}_${fileName}`;
+        const targetPath = path.join(dayFolder, uniqueFileName);
+        
+        // Copy the file
+        fs.copyFileSync(filePath, targetPath);
+        console.log(`File copied to: ${targetPath}`);
+        
+        // Save to database
+        await savePhotoToDB(locationId, subDir, targetPath, uniqueFileName, new Date(year, month - 1, day));
+      }
+    } catch (error) {
+      console.error(`Error processing file ${filePath}: ${error.message}`);
+    }
+  });
+
+  watcher.on('error', error => console.error(`Watcher error: ${error}`));
+};
+
+// Start watching each dataset
+Object.entries(datasetPaths).forEach(([subDir, datasetPath]) => {
+  watchDataset(datasetPath, subDir);
+});
+
+console.log('File watchers started for automatic photo processing');

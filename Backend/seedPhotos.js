@@ -68,12 +68,18 @@ const locationData = [
 ];
 
 // Function to create upload directories if they don't exist
-const createUploadDirs = () => {
-  const uploadDir = path.join(__dirname, 'uploads/locationPhotos');
-  if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir, { recursive: true });
-  }
+const createUploadDirs = (locationId) => {
+  const baseDir = path.join(__dirname, 'uploads', 'locationPhotos', locationId.toString());
+  const subDirs = ['7m', '10m'];
+
+  subDirs.forEach((subDir) => {
+    const dirPath = path.join(baseDir, subDir);
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true });
+    }
+  });
 };
+
 
 // Function to get images from dataset folders
 const getSourceImages = (locationId) => {
@@ -168,49 +174,41 @@ const generatePhotosForLocation = async (location, month, year) => {
 };
 
 // Main function to seed the database
-const seedDatabase = async () => {
+async function seedDatabase() {
   try {
-    // Connect to MongoDB
-    await connectDB();
-    
-    console.log('Creating upload directories...');
-    createUploadDirs();
-    
     // Clear existing data
+    console.log('Clearing existing data...');
     await Location.deleteMany({});
     await Photo.deleteMany({});
     
-    console.log('Existing data cleared. Seeding new data...');
-    
     // Insert locations
-    await Location.insertMany(locationData);
-    console.log(`✅ Inserted ${locationData.length} locations`);
-    
-    // Set month and year for the photos
-    const month = 4; // April
-    const year = 2025;
+    console.log('Inserting locations...');
+    await Location.insertMany(locations);
+    console.log(`✅ Added ${locations.length} locations`);
     
     // Generate and insert photos for each location
-    for (const location of locationData) {
-      console.log(`Generating photos for location: ${location.name} (ID: ${location.id})`);
-      const photos = await generatePhotosForLocation(location, month, year);
+    for (const location of locations) {
+      console.log(`Processing location: ${location.name}`);
+      const photos = await generatePhotosForLocation(location);
       
       if (photos.length > 0) {
         await Photo.insertMany(photos);
-        console.log(`✅ Added ${photos.length} photos for location: ${location.name}`);
+        console.log(`✅ Added ${photos.length} photos for ${location.name}`);
+      } else {
+        console.warn(`⚠️ No photos were generated for ${location.name}`);
       }
     }
     
-    console.log('Database seeding completed successfully 🎉');
-    
+    console.log('Database seeding completed successfully!');
   } catch (error) {
     console.error('Error seeding database:', error);
   } finally {
-    // Close database connection
-    mongoose.connection.close();
-    console.log('Database connection closed');
+    mongoose.disconnect();
   }
-};
+}
 
 // Run the seeding function
 seedDatabase();
+module.exports = {
+  generatePhotosForLocation
+};
