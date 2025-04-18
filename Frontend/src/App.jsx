@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
 import { SettingsProvider } from './context/SettingsContext';
+import  LocationStatsPage  from './pages/LocationStatsPage';
+import  LocationPhotosPage  from './pages/LocationPhotosPage';
 
 // Import pages
 import LandingPage from './pages/LandingPage';
@@ -29,6 +31,9 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/settings" element={<SettingsPage />} />
               <Route path="*" element={<NotFoundPage />} />
+              <Route path="/location/:locationId/stats" element={<LocationStatsPage />} />
+<Route path="/location/:locationId/photos" element={<LocationPhotosPage />} />
+
             </Routes>
           </SettingsProvider>
         </ToastProvider>

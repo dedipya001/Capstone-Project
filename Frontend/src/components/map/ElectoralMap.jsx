@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Map, { Source, Layer, Marker, Popup, NavigationControl, GeolocateControl } from 'react-map-gl';
 import { useToast } from '../../context/ToastContext';
 import { useSettings } from '../../context/SettingsContext';
@@ -11,6 +12,7 @@ import MapInfo from './MapInfo';
 import LoadingOverlay from './LoadingOverlay';
 import GarbageMonitor from './GarbageMonitor';
 import Attribution from '../common/Attribution';
+
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 
@@ -68,8 +70,6 @@ const VIJAYAWADA_BOUNDARY = {
     ]]
   }
 };
-
-
 
 // Garbage collection points with status
 const GARBAGE_COLLECTION_POINTS = [
@@ -194,15 +194,6 @@ const VIJAYAWADA_LANDMARKS = [
   },
   {
     id: 4,
-    name: "Bhavani Island",
-    category: CATEGORIES.RECREATION,
-    description: "River island and tourist attraction in Krishna River. Features water sports, resort accommodations, and recreational activities.",
-    latitude: 16.5280,
-    longitude: 80.5947,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Krishna_River_Vijayawada.jpg/320px-Krishna_River_Vijayawada.jpg"
-  },
-  {
-    id: 5,
     name: "Rajiv Gandhi Park",
     category: CATEGORIES.RECREATION,
     description: "Major urban park in the heart of the city with lush greenery, walking paths, and recreational facilities for families.",
@@ -211,7 +202,7 @@ const VIJAYAWADA_LANDMARKS = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Rajiv_Gandhi_Park%2C_Vijayawada.jpg/320px-Rajiv_Gandhi_Park%2C_Vijayawada.jpg"
   },
   {
-    id: 6,
+    id: 5,
     name: "Mangalagiri Market Area",
     category: CATEGORIES.MARKET,
     description: "A bustling market area known for textiles, fresh produce, spices, and local handicrafts. Popular among locals and tourists alike.",
@@ -220,7 +211,7 @@ const VIJAYAWADA_LANDMARKS = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/MG_Road%2C_Vijayawada.jpg/320px-MG_Road%2C_Vijayawada.jpg"
   },
   {
-    id: 7,
+    id: 6,
     name: "SRM University, AP",
     category: CATEGORIES.EDUCATIONAL,
     description: "A prominent private university offering undergraduate, postgraduate, and doctoral programs in engineering, sciences, liberal arts, and management.",
@@ -253,6 +244,7 @@ const GARBAGE_STATUS_COLORS = {
 };
 
 const ElectoralMap = () => {
+  const navigate = useNavigate(); // Add this hook for navigation
   const { addToast } = useToast();
   const { mapSettings } = useSettings();
   const mapRef = useRef();
@@ -273,29 +265,6 @@ const ElectoralMap = () => {
     critical: GARBAGE_COLLECTION_POINTS.filter(point => point.status === 'critical').length,
     averageFillLevel: Math.round(GARBAGE_COLLECTION_POINTS.reduce((sum, point) => sum + point.fillLevel, 0) / GARBAGE_COLLECTION_POINTS.length)
   });
-
-  // Handler for viewing location statistics
-const handleViewStats = (landmark) => {
-  // Navigate to stats view or open stats panel
-  addToast(`Loading statistics for ${landmark.name}...`, 'info', 2000);
-  
-  // Implementation will depend on your app's routing/state management
-  // For example, you might use:
-  // navigate(`/location/${landmark.id}/stats`);
-  // or open a modal with stats
-};
-
-// Handler for viewing location photos
-const handleViewPhotos = (landmark) => {
-  // Navigate to photos view or open photos gallery
-  addToast(`Loading photos for ${landmark.name}...`, 'info', 2000);
-  
-  // Implementation will depend on your app's routing/state management
-  // For example, you might use:
-  // navigate(`/location/${landmark.id}/photos`);
-  // or open a photos modal
-};
-
 
   // Filter landmarks by active category
   const filteredLandmarks = activeCategory 
@@ -465,6 +434,20 @@ const handleViewPhotos = (landmark) => {
     }
   };
 
+  // Handler for viewing location statistics (navigate to stats page)
+  const handleViewStats = (landmark) => {
+    addToast(`Loading statistics for ${landmark.name}...`, 'info', 2000);
+    // Navigate to the stats page with the location ID
+    navigate(`/location/${landmark.id}/stats`);
+  };
+  
+  // Handler for viewing location photos (navigate to photos page)
+  const handleViewPhotos = (landmark) => {
+    addToast(`Loading photos for ${landmark.name}...`, 'info', 2000);
+    // Navigate to the photos page with the location ID
+    navigate(`/location/${landmark.id}/photos`);
+  };
+
   return (
     <div className="vijayawada-map-container">
       <LoadingOverlay loading={loading} />
@@ -491,15 +474,14 @@ const handleViewPhotos = (landmark) => {
           onClick={toggleLegend}
           title={showLegend ? "Hide legend" : "Show legend"}
         >
-          <span className="control-icon">🏷️</span>
+          <span className="control-icon">🗺️</span>
           <span className="control-text">{showLegend ? "Hide" : "Show"} Legend</span>
         </button>
         
         <button 
-          className="map-control-button"
+          className={`map-control-button ${showGarbageMonitor ? 'active' : ''}`}
           onClick={toggleGarbageMonitor}
           title="Garbage Monitoring"
-          className={`map-control-button ${showGarbageMonitor ? 'active' : ''}`}
         >
           <span className="control-icon">🗑️</span>
           <span className="control-text">Garbage Monitor</span>
@@ -646,51 +628,50 @@ const handleViewPhotos = (landmark) => {
         }
 
         {/* Popup for selected landmark */}
-{selectedLandmark && (
-  <Popup
-    latitude={selectedLandmark.latitude}
-    longitude={selectedLandmark.longitude}
-    closeOnClick={false}
-    onClose={() => setSelectedLandmark(null)}
-    anchor="top"
-    offset={20}
-    className="landmark-popup"
-    maxWidth="350px"
-  >
-    <div className="popup-content">
-      <div className="popup-header" style={{ backgroundColor: MARKER_COLORS[selectedLandmark.category] }}>
-        <h3>{selectedLandmark.name}</h3>
-        <span className="category-badge">
-          {selectedLandmark.category.charAt(0).toUpperCase() + selectedLandmark.category.slice(1)}
-        </span>
-      </div>
-      
-      <div className="popup-image-container">
-        <img src={selectedLandmark.image} alt={selectedLandmark.name} />
-      </div>
-      
-      <p className="popup-description">{selectedLandmark.description}</p>
-      
-      <div className="popup-footer">
-        <button 
-          className="popup-action-button"
-          onClick={() => handleViewStats(selectedLandmark)}
-        >
-          <span className="action-icon">📊</span>
-          Stats
-        </button>
-        <button 
-          className="popup-action-button"
-          onClick={() => handleViewPhotos(selectedLandmark)}
-        >
-          <span className="action-icon">📷</span>
-          Photos
-        </button>
-      </div>
-    </div>
-  </Popup>
-)}
-
+        {selectedLandmark && (
+          <Popup
+            latitude={selectedLandmark.latitude}
+            longitude={selectedLandmark.longitude}
+            closeOnClick={false}
+            onClose={() => setSelectedLandmark(null)}
+            anchor="top"
+            offset={20}
+            className="landmark-popup"
+            maxWidth="350px"
+          >
+            <div className="popup-content">
+              <div className="popup-header" style={{ backgroundColor: MARKER_COLORS[selectedLandmark.category] }}>
+                <h3>{selectedLandmark.name}</h3>
+                <span className="category-badge">
+                  {selectedLandmark.category.charAt(0).toUpperCase() + selectedLandmark.category.slice(1)}
+                </span>
+              </div>
+              
+              <div className="popup-image-container">
+                <img src={selectedLandmark.image} alt={selectedLandmark.name} />
+              </div>
+              
+              <p className="popup-description">{selectedLandmark.description}</p>
+              
+              <div className="popup-footer">
+                <button 
+                  className="popup-action-button"
+                  onClick={() => handleViewStats(selectedLandmark)}
+                >
+                  <span className="action-icon">📊</span>
+                  Stats
+                </button>
+                <button 
+                  className="popup-action-button"
+                  onClick={() => handleViewPhotos(selectedLandmark)}
+                >
+                  <span className="action-icon">📷</span>
+                  Photos
+                </button>
+              </div>
+            </div>
+          </Popup>
+        )}
         
         {/* Popup for selected garbage collection point */}
         {selectedGarbage && (
@@ -744,7 +725,7 @@ const handleViewPhotos = (landmark) => {
                     window.open(`https://www.google.com/maps/dir/?api=1&destination=${selectedGarbage.latitude},${selectedGarbage.longitude}&travelmode=driving`, '_blank');
                   }}
                 >
-                  <span className="action-icon">📍</span>
+                  <span className="action-icon">🚗</span>
                   Directions
                 </button>
                 <button 
