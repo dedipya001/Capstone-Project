@@ -4,11 +4,23 @@ const multer = require('multer');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const photoController = require('../controllers/photoController');
+const fs = require('fs');
 
 // Configure storage for uploaded images
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const uploadPath = path.join(__dirname, '../uploads/locationPhotos');
+    // Extract parameters from the request
+    const { locationId, captureDistance } = req.body;
+    
+    // Validate captureDistance (must be either 7m or 10m)
+    const distance = captureDistance === '7m' ? '7m' : '10m';
+    
+    // Create the destination path based on the new folder structure
+    const uploadPath = path.join(__dirname, `../uploads/locationPhotos/${locationId}/${distance}`);
+    
+    // Ensure directory exists before saving
+    fs.mkdirSync(uploadPath, { recursive: true });
+    
     cb(null, uploadPath);
   },
   filename: (req, file, cb) => {

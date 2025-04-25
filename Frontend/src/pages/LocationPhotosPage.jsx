@@ -29,6 +29,7 @@ const LocationPhotosPage = () => {
   });
   const [selectedImage, setSelectedImage] = useState(null);
   const [garbageAnalysis, setGarbageAnalysis] = useState(null);
+  const [captureDistance, setCaptureDistance] = useState('7m'); // Default to 7m
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,18 +40,8 @@ const LocationPhotosPage = () => {
         const locationData = await locationResponse.json();
         setLocation(locationData);
         
-        // Fetch photos
-        const photosResponse = await fetch(`http://localhost:5000/api/photos/location/${locationId}/by-date`);
-        if (!photosResponse.ok) throw new Error('Failed to fetch photos');
-        const photosData = await photosResponse.json();
-        
-        // Get dates in sorted order
-        const dates = Object.keys(photosData).sort();
-        setPhotoData({
-          photos: photosData,
-          dates: dates,
-          selectedDate: dates.length > 0 ? dates[0] : null
-        });
+        // Fetch photos for the selected capture distance
+        await fetchPhotos(captureDistance);
         
         setLoading(false);
       } catch (error) {
@@ -61,7 +52,32 @@ const LocationPhotosPage = () => {
     };
     
     fetchData();
-  }, [locationId]);
+  }, [locationId, captureDistance]);
+
+  const fetchPhotos = async (distance) => {
+    try {
+      const photosResponse = await fetch(`http://localhost:5000/api/photos/location/${locationId}/by-date?captureDistance=${distance}`);
+      if (!photosResponse.ok) throw new Error('Failed to fetch photos');
+      const photosData = await photosResponse.json();
+      
+      // Get dates in sorted order
+      const dates = Object.keys(photosData).sort();
+      setPhotoData({
+        photos: photosData,
+        dates: dates,
+        selectedDate: dates.length > 0 ? dates[0] : null
+      });
+      
+      // Reset selected image when distance changes
+      setSelectedImage(null);
+      setGarbageAnalysis(null);
+      
+      return true;
+    } catch (error) {
+      console.error("Error fetching photos:", error);
+      return false;
+    }
+  };
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -81,6 +97,10 @@ const LocationPhotosPage = () => {
     setGarbageAnalysis(null);
   };
 
+  const handleDistanceChange = (distance) => {
+    setCaptureDistance(distance);
+  };
+
   const handleImageSelect = (photo) => {
     setSelectedImage(photo);
     
@@ -91,7 +111,7 @@ const LocationPhotosPage = () => {
       scene_height_m: (5 + Math.random() * 3).toFixed(1),
       scene_area_m2: (50 + Math.random() * 30).toFixed(1),
       waste_area_m2: (Math.random() * 15).toFixed(2),
-      capture_distance_m: (5 + Math.random() * 5).toFixed(1),
+      capture_distance_m: photo.captureDistance,
       waste_pixels: Math.floor(Math.random() * 50000) + 10000,
       total_pixels: 800 * 600,
       detections: Math.floor(Math.random() * 8) + 1,
@@ -153,6 +173,24 @@ const LocationPhotosPage = () => {
       
       <div className="photos-content">
         <div className="calendar-sidebar">
+          <div className="distance-selector">
+            <h3>Capture Distance</h3>
+            <div className="distance-buttons">
+              <button 
+                className={`distance-button ${captureDistance === '7m' ? 'active' : ''}`}
+                onClick={() => handleDistanceChange('7m')}
+              >
+                7 meters
+              </button>
+              <button 
+                className={`distance-button ${captureDistance === '10m' ? 'active' : ''}`}
+                onClick={() => handleDistanceChange('10m')}
+              >
+                10 meters
+              </button>
+            </div>
+          </div>
+          
           <h2>April 2025</h2>
           <div className="date-list">
             {photoData.dates.map(date => (
@@ -181,7 +219,10 @@ const LocationPhotosPage = () => {
         
         <div className="photos-main-content">
           <div className="selected-date-header">
-            <h2>{photoData.selectedDate ? formatDate(photoData.selectedDate) : 'No date selected'}</h2>
+            <h2>
+              {photoData.selectedDate ? formatDate(photoData.selectedDate) : 'No date selected'} 
+              <span className="distance-indicator">({captureDistance})</span>
+            </h2>
             <span className="photos-count">{getSelectedDatePhotos().length} photos</span>
           </div>
           
@@ -204,12 +245,13 @@ const LocationPhotosPage = () => {
                       <span className="photo-time">
                         {new Date(photo.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                       </span>
+                      <span className="photo-distance">{photo.captureDistance}</span>
                     </div>
                   </div>
                 ))
               ) : (
                 <div className="no-photos-message">
-                  <p>No photos available for this date</p>
+                  <p>No photos available for this date at {captureDistance} distance</p>
                 </div>
               )}
             </div>
@@ -242,6 +284,12 @@ const LocationPhotosPage = () => {
                         <span className="metadata-label">Time:</span>
                         <span className="metadata-value">
                           {new Date(selectedImage.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                        </span>
+                      </div>
+                      <div className="metadata-item">
+                        <span className="metadata-label">Distance:</span>
+                        <span className="metadata-value highlight">
+                          {selectedImage.captureDistance}
                         </span>
                       </div>
                       <div className="metadata-item">
@@ -301,7 +349,7 @@ const LocationPhotosPage = () => {
                       Analyze Waste
                     </button>
                     <button className="photo-action-button download" onClick={() => window.open(getPhotoUrl(selectedImage.path), '_blank')}>
-                      <span className="action-icon">💾</span>
+                      <span className="action-icon">📥</span>
                       Download
                     </button>
                     <button className="photo-action-button report" onClick={() => alert('Report feature will be available in the next update')}>

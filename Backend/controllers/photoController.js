@@ -7,9 +7,14 @@ const fs = require('fs');
 exports.getPhotosByLocation = async (req, res) => {
   try {
     const { locationId } = req.params;
-    const { date, month, year } = req.query;
+    const { date, month, year, captureDistance } = req.query;
     
     let query = { locationId: Number(locationId) };
+    
+    // Add captureDistance filter if provided
+    if (captureDistance) {
+      query.captureDistance = captureDistance;
+    }
     
     // Add date filter if provided
     if (date && month && year) {
@@ -24,7 +29,7 @@ exports.getPhotosByLocation = async (req, res) => {
       query.captureDate = { $gte: startDate, $lte: endDate };
     }
     
-    const photos = await Photo.find(query).sort({ captureDate: 1 });
+    const photos = await Photo.find(query).sort({ captureDate: 1, captureDistance: 1 });
     
     res.status(200).json({
       success: true,
@@ -45,13 +50,21 @@ exports.getPhotosByLocation = async (req, res) => {
 exports.getPhotosByDate = async (req, res) => {
   try {
     const { date, month, year } = req.params;
+    const { captureDistance } = req.query;
     
     const startDate = new Date(year, month - 1, date);
     const endDate = new Date(year, month - 1, date, 23, 59, 59);
     
-    const photos = await Photo.find({
+    let query = {
       captureDate: { $gte: startDate, $lte: endDate }
-    }).sort({ locationId: 1 });
+    };
+    
+    // Add captureDistance filter if provided
+    if (captureDistance) {
+      query.captureDistance = captureDistance;
+    }
+    
+    const photos = await Photo.find(query).sort({ locationId: 1, captureDistance: 1 });
     
     res.status(200).json({
       success: true,
@@ -72,25 +85,34 @@ exports.getPhotosByDate = async (req, res) => {
 exports.getPhotoStatsForLocation = async (req, res) => {
   try {
     const { locationId } = req.params;
-    const { month, year } = req.query;
+    const { month, year, captureDistance } = req.query;
     
     const startDate = new Date(year, month - 1, 1);
     const endDate = new Date(year, month, 0, 23, 59, 59); // Last day of month
     
-    const photos = await Photo.find({
+    let query = {
       locationId: Number(locationId),
       captureDate: { $gte: startDate, $lte: endDate }
-    }).sort({ captureDate: 1 });
+    };
+    
+    // Add captureDistance filter if provided
+    if (captureDistance) {
+      query.captureDistance = captureDistance;
+    }
+    
+    const photos = await Photo.find(query).sort({ captureDate: 1 });
     
     // Calculate daily averages
     const dailyStats = {};
     
     photos.forEach(photo => {
       const day = photo.captureDate.getDate();
+      const distance = photo.captureDistance || 'unknown';
       
       if (!dailyStats[day]) {
         dailyStats[day] = {
           day,
+          distanceStats: { '7m': { count: 0 }, '10m': { count: 0 } },
           peopleCount: 0,
           vehicleCount: 0,
           garbageStats: { low: 0, medium: 0, high: 0, none: 0 },
@@ -105,6 +127,11 @@ exports.getPhotoStatsForLocation = async (req, res) => {
       dayStat.garbageStats[photo.stats.garbageLevel] += 1;
       dayStat.weatherStats[photo.stats.weatherCondition] += 1;
       dayStat.photoCount += 1;
+      
+      // Track stats by distance
+      if (distance === '7m' || distance === '10m') {
+        dayStat.distanceStats[distance].count += 1;
+      }
     });
     
     // Calculate averages
@@ -126,6 +153,7 @@ exports.getPhotoStatsForLocation = async (req, res) => {
       locationId: Number(locationId),
       month,
       year,
+      captureDistance: captureDistance || 'all',
       dailyStats: dailyStatsArray
     });
   } catch (error) {
@@ -148,12 +176,20 @@ exports.uploadPhotos = async (req, res) => {
       });
     }
     
-    const { locationId, date, month, year, captionPrefix } = req.body;
+    const { locationId, date, month, year, captionPrefix, captureDistance } = req.body;
     
-    if (!locationId || !date || !month || !year) {
+    if (!locationId || !date || !month || !year || !captureDistance) {
       return res.status(400).json({
         success: false,
         error: 'Missing required fields'
+      });
+    }
+    
+    // Validate capture distance
+    if (captureDistance !== '7m' && captureDistance !== '10m') {
+      return res.status(400).json({
+        success: false,
+        error: 'Invalid capture distance. Must be either "7m" or "10m"'
       });
     }
     
@@ -167,20 +203,42 @@ exports.uploadPhotos = async (req, res) => {
       });
     }
     
-    // Process each uploaded file
+    // Check how many photos already exist for this day and capture distance
     const captureDate = new Date(year, month - 1, date);
+    const startDate = new Date(year, month - 1, date);
+    const endDate = new Date(year, month - 1, date, 23, 59, 59);
+    
+    const existingPhotos = await Photo.find({
+      locationId: Number(locationId),
+      captureDistance,
+      captureDate: { $gte: startDate, $lte: endDate }
+    });
+    
+    if (existingPhotos.length >= 2) {
+      return res.status(400).json({
+        success: false,
+        error: `Already have 2 photos for location ${locationId} at ${captureDistance} on ${month}/${date}/${year}`
+      });
+    }
+    
+    // Limit upload to only what's needed (max 2 total)
+    const maxAllowedUploads = 2 - existingPhotos.length;
+    const filesToProcess = req.files.slice(0, maxAllowedUploads);
+    
+    // Process each uploaded file
     const uploadedPhotos = [];
     
-    for (let i = 0; i < req.files.length; i++) {
-      const file = req.files[i];
+    for (let i = 0; i < filesToProcess.length; i++) {
+      const file = filesToProcess[i];
       
       // Create photo document
       const photo = new Photo({
         locationId: Number(locationId),
         captureDate,
+        captureDistance,
         filePath: file.path.replace('public', ''),
         fileName: file.filename,
-        caption: `${captionPrefix || location.name} - Photo ${i+1}`,
+        caption: `${captionPrefix || location.name} - ${captureDistance} - Photo ${existingPhotos.length + i + 1}`,
         metadata: {
           size: file.size,
           width: 0, // These would be populated by an image processing library
